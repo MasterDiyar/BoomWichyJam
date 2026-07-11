@@ -9,6 +9,7 @@ public partial class KostBoom : AfterDeath
 	[Export] private int Count = 6;
 	public override void After_Death()
 	{
+		Count = GlobalController.Instance.TomatoSeedCount;
 		var p = GetParent<Bullet>();
 		for (int i = 0; i < Count; i++)
 		{
@@ -16,6 +17,7 @@ public partial class KostBoom : AfterDeath
 
 			bullet.Rotation = Mathf.Tau / Count * i;
 			bullet.parent = p.parent;
+			bullet.Damage = GlobalController.Instance.TomatoSeedDamageAmplifier;
 			bullet.Position = p.GlobalPosition;
 			bullet.BulletResource = bulletResource;
 			GetTree().Root.CallDeferred("add_child", bullet);

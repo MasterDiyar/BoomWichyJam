@@ -4,7 +4,7 @@ using System;
 public partial class AttackHandler : Node2D
 {
 	[Export] PackedScene bulletScene;
-	[Export] BulletResource bulletResource;
+	[Export] public BulletResource bulletResource;
 	[Export] private int Count = 1;
 	[Export] public float DamageModifer =1;
 	[Export] public float AttackSpeed =1;

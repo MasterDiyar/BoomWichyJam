@@ -153,13 +153,14 @@ font_size = 32
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grgi1"]
 bg_color = Color(0.9764706, 0, 0, 1)
 
-[node name="Hamburg" type="CharacterBody2D" unique_id=959921502 node_paths=PackedStringArray("animationPlayer", "whereAdd", "Head", "CollectArea")]
+[node name="Hamburg" type="CharacterBody2D" unique_id=959921502 node_paths=PackedStringArray("animationPlayer", "whereAdd", "Head", "body", "CollectArea")]
 texture_filter = 3
 script = ExtResource("1_wid6y")
 playerResource = SubResource("Resource_521od")
 animationPlayer = NodePath("AnimationPlayer")
 whereAdd = NodePath("Textiure/Body")
 Head = NodePath("Textiure/HighBulka")
+body = NodePath("Textiure")
 CollectArea = NodePath("Podbor")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917468936]
@@ -216,11 +217,12 @@ scene = ExtResource("11_ecywh")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Podbor" unique_id=37060148]
 shape = SubResource("CircleShape2D_sdmle")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=2101591385 node_paths=PackedStringArray("parent", "MoneyCountLabel", "HpProgressBar")]
+[node name="UI" type="CanvasLayer" parent="." unique_id=2101591385 node_paths=PackedStringArray("parent", "MoneyCountLabel", "HpProgressBar", "Holodos")]
 script = ExtResource("12_e6na4")
 parent = NodePath("..")
 MoneyCountLabel = NodePath("Control/Money")
 HpProgressBar = NodePath("Control/ProgressBar")
+Holodos = NodePath("Holodos")
 
 [node name="Control" type="Control" parent="UI" unique_id=1479781073]
 texture_filter = 3

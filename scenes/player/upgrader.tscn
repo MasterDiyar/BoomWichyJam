@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0p7jvte8yxo2"]
+
+[ext_resource type="Script" uid="uid://bdr6ck3uoatxn" path="res://scripts/player/Upgrader.cs" id="1_pudjq"]
+
+[node name="Upgrader" type="Node" unique_id=1605457177]
+script = ExtResource("1_pudjq")

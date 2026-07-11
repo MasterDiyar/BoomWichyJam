@@ -13,7 +13,7 @@ public partial class Test : CanvasLayer
 
 	private void ButtonAddOnPressed()
 	{
-		Parent.AddIngridient(scene);
+		Parent.AddIngridient(scene, Upgrader.What.Tomato);
 	}
 
 	public override void _Input(InputEvent @event)

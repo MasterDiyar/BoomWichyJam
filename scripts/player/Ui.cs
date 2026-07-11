@@ -7,11 +7,13 @@ public partial class Ui : CanvasLayer
 
 	[Export] private Label MoneyCountLabel;
 	[Export] private ProgressBar HpProgressBar;
+	[Export] private Control Holodos;
 	
 	public override void _Ready()
 	{
 		parent.MoneyChanged += MoneyChanged;
 		parent.HpChanged += HpChanged;
+		parent.OpenHolodilnik += OpenFridge;
 	}
 
 	private void HpChanged()
@@ -23,6 +25,11 @@ public partial class Ui : CanvasLayer
 	private void MoneyChanged()
 	{
 		MoneyCountLabel.Text = $"X{(int)GlobalController.Instance.Money}";
+	}
+
+	private void OpenFridge()
+	{
+		Holodos.Visible = true;
 	}
 	
 	

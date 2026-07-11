@@ -6,12 +6,14 @@
 [ext_resource type="Script" uid="uid://cx6poevkfjngu" path="res://scripts/resor/UpgradeResource.cs" id="4_1io5f"]
 [ext_resource type="Texture2D" uid="uid://3mcbgfq8eerj" path="res://assets/ingridients/pomidor.png" id="5_pf6sa"]
 [ext_resource type="Texture2D" uid="uid://clto3ohnmh20q" path="res://assets/ingridients/hp.png" id="6_flmjc"]
+[ext_resource type="PackedScene" uid="uid://d0p7jvte8yxo2" path="res://scenes/player/upgrader.tscn" id="7_1io5f"]
 
 [sub_resource type="Resource" id="Resource_grgi1"]
 script = ExtResource("4_1io5f")
 texture = ExtResource("5_pf6sa")
 Name = "pomidor 1"
 Count = 1
+Description = "Стреляет двумя помидорами по 5 урона который взрывается"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_ckvpb"]
@@ -19,6 +21,15 @@ script = ExtResource("4_1io5f")
 texture = ExtResource("6_flmjc")
 Name = "pomidor 2"
 Count = 10
+Description = "Увеличевает количество косточек и уменьшает скорость атаки"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_450t8"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("5_pf6sa")
+Name = "томатики 3"
+Count = 50
+Description = "Уменьшает разброс и увеличивает количество косточек и их урон"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [node name="Holodos" type="Control" unique_id=1192082827 node_paths=PackedStringArray("ExitButton")]
@@ -67,9 +78,11 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 45
 columns = 2
 
-[node name="UpgradeButton" parent="TextureRect/MarginContainer/GridContainer" unique_id=1841694482 instance=ExtResource("2_jysym")]
+[node name="pomidor" parent="TextureRect/MarginContainer/GridContainer" unique_id=1841694482 instance=ExtResource("2_jysym")]
 layout_mode = 2
-upgrades = Array[Object]([SubResource("Resource_grgi1"), SubResource("Resource_ckvpb")])
+upgrades = Array[Object]([SubResource("Resource_grgi1"), SubResource("Resource_ckvpb"), SubResource("Resource_450t8")])
+
+[node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/pomidor" unique_id=1605457177 instance=ExtResource("7_1io5f")]
 
 [node name="UpgradeButton2" parent="TextureRect/MarginContainer/GridContainer" unique_id=1618943306 instance=ExtResource("2_jysym")]
 layout_mode = 2

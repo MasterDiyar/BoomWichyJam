@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cbvkur2781wh"]
+
+[ext_resource type="Texture2D" uid="uid://x3mm2aevht66" path="res://assets/ingridients/money.png" id="1_6ko5o"]
+[ext_resource type="Script" uid="uid://c33871mjvfk2e" path="res://scripts/enemy/Money.cs" id="1_y11w7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdmle"]
+radius = 5.0990195
+
+[node name="Money" type="Area2D" unique_id=25221027]
+texture_filter = 3
+script = ExtResource("1_y11w7")
+
+[node name="Money" type="Sprite2D" parent="." unique_id=273957757]
+position = Vector2(-1, 0)
+texture = ExtResource("1_6ko5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2070390222]
+shape = SubResource("CircleShape2D_sdmle")

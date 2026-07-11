@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cbb8k2y1ntsnu"]
+
+[ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_7bio2"]
+[ext_resource type="Texture2D" uid="uid://ls5cpd463ykm" path="res://assets/ingridients/leg.png" id="2_e2cev"]
+[ext_resource type="Script" uid="uid://cbl211s8mv2m5" path="res://scripts/player/Leg.cs" id="3_03uwm"]
+
+[node name="bullet" unique_id=384085446 instance=ExtResource("1_7bio2")]
+
+[node name="Leg" type="Sprite2D" parent="." index="1" unique_id=1498784396 node_paths=PackedStringArray("legs")]
+rotation = -1.5707964
+texture = ExtResource("2_e2cev")
+script = ExtResource("3_03uwm")
+legs = [NodePath("../Leg2"), NodePath("../Leg3"), NodePath("../Leg4")]
+
+[node name="Leg2" type="Sprite2D" parent="." index="2" unique_id=1371867856]
+modulate = Color(1, 1, 1, 0.5019608)
+rotation = -1.5707964
+texture = ExtResource("2_e2cev")
+
+[node name="Leg3" type="Sprite2D" parent="." index="3" unique_id=454823024]
+modulate = Color(1, 1, 1, 0.2509804)
+rotation = -1.5707964
+texture = ExtResource("2_e2cev")
+
+[node name="Leg4" type="Sprite2D" parent="." index="4" unique_id=1621132745]
+modulate = Color(1, 1, 1, 0.1254902)
+rotation = -1.5707964
+texture = ExtResource("2_e2cev")

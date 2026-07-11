@@ -1,0 +1,265 @@
+[gd_scene format=3 uid="uid://bm4stp1uiixfs"]
+
+[ext_resource type="Texture2D" uid="uid://ls5cpd463ykm" path="res://assets/ingridients/leg.png" id="1_b65qp"]
+[ext_resource type="Script" uid="uid://djakemqmgvkoc" path="res://scripts/player/Hamburg.cs" id="1_wid6y"]
+[ext_resource type="Script" uid="uid://282cvyih62kp" path="res://scripts/resor/UnitResource.cs" id="2_an2w6"]
+[ext_resource type="Texture2D" uid="uid://ysbqn8oigytp" path="res://assets/ingridients/low_bulka.png" id="2_wid6y"]
+[ext_resource type="Texture2D" uid="uid://dtqogvmlhp2fe" path="res://assets/ingridients/high_bulka.png" id="3_ucrkw"]
+[ext_resource type="Texture2D" uid="uid://b8irgw2oyhubv" path="res://assets/ingridients/eyes.png" id="4_8vrpe"]
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="6_521od"]
+[ext_resource type="PackedScene" uid="uid://cbb8k2y1ntsnu" path="res://scenes/bullets/leg.tscn" id="7_an2w6"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="8_nnjgc"]
+[ext_resource type="PackedScene" uid="uid://dyclnrahg7pk" path="res://scenes/player/test.tscn" id="10_nnjgc"]
+[ext_resource type="PackedScene" uid="uid://6td8b5ip8p4r" path="res://scenes/bullets/pomidorki.tscn" id="11_ecywh"]
+[ext_resource type="Texture2D" uid="uid://x3mm2aevht66" path="res://assets/ingridients/money.png" id="12_8lgby"]
+[ext_resource type="Script" uid="uid://dtbe5ur0noggs" path="res://scripts/player/Ui.cs" id="12_e6na4"]
+[ext_resource type="Texture2D" uid="uid://clto3ohnmh20q" path="res://assets/ingridients/hp.png" id="14_1dn68"]
+
+[sub_resource type="Resource" id="Resource_521od"]
+script = ExtResource("2_an2w6")
+MaxHp = 100.0
+MaxSpeed = 25.0
+MaxShield = 50.0
+metadata/_custom_type_script = "uid://282cvyih62kp"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmle"]
+size = Vector2(53, 25)
+
+[sub_resource type="Resource" id="Resource_sdmle"]
+script = ExtResource("8_nnjgc")
+Damage = 10.0
+Acceleration = 400.0
+LifeTime = 1.0
+Pierce = 1.0
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[sub_resource type="Animation" id="Animation_521od"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textiure/Leg:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textiure/Leg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 26)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textiure/Leg2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 23)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textiure/Leg2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_an2w6"]
+resource_name = "move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textiure/Leg:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.099999964, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(12, 21), Vector2(-12.000002, 22.999998)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textiure/Leg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.099999964, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.4956735, 0.6614798]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textiure/Leg2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666666, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-5.000002, 22), Vector2(21, 17)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textiure/Leg2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.06666666, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.6614798, -0.6614798]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nnjgc"]
+_data = {
+&"RESET": SubResource("Animation_521od"),
+&"move": SubResource("Animation_an2w6")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdmle"]
+radius = 64.00781
+
+[sub_resource type="LabelSettings" id="LabelSettings_sdmle"]
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grgi1"]
+bg_color = Color(0.9764706, 0, 0, 1)
+
+[node name="Hamburg" type="CharacterBody2D" unique_id=959921502 node_paths=PackedStringArray("animationPlayer", "whereAdd", "Head", "CollectArea")]
+texture_filter = 3
+script = ExtResource("1_wid6y")
+playerResource = SubResource("Resource_521od")
+animationPlayer = NodePath("AnimationPlayer")
+whereAdd = NodePath("Textiure/Body")
+Head = NodePath("Textiure/HighBulka")
+CollectArea = NodePath("Podbor")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917468936]
+position = Vector2(1.5, 2.5)
+shape = SubResource("RectangleShape2D_sdmle")
+
+[node name="Textiure" type="Node2D" parent="." unique_id=462644604]
+
+[node name="Leg" type="Sprite2D" parent="Textiure" unique_id=2052884431]
+position = Vector2(-7, 26)
+texture = ExtResource("1_b65qp")
+
+[node name="Leg2" type="Sprite2D" parent="Textiure" unique_id=99455094]
+position = Vector2(13, 23)
+texture = ExtResource("1_b65qp")
+
+[node name="LowBulka" type="Sprite2D" parent="Textiure" unique_id=886114467]
+position = Vector2(-1, -12)
+texture = ExtResource("2_wid6y")
+
+[node name="Body" type="Node2D" parent="Textiure" unique_id=1265043507]
+
+[node name="AttackHandler" parent="Textiure/Body" unique_id=166735263 instance=ExtResource("6_521od")]
+bulletScene = ExtResource("7_an2w6")
+bulletResource = SubResource("Resource_sdmle")
+
+[node name="HighBulka" type="Sprite2D" parent="Textiure" unique_id=1477582928]
+position = Vector2(0, 1)
+texture = ExtResource("3_ucrkw")
+
+[node name="eye1" type="Sprite2D" parent="Textiure/HighBulka" unique_id=281232388]
+position = Vector2(0, -1)
+texture = ExtResource("4_8vrpe")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="eye2" type="Sprite2D" parent="Textiure/HighBulka" unique_id=1980790382]
+position = Vector2(18, -5)
+texture = ExtResource("4_8vrpe")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=588783487]
+libraries/ = SubResource("AnimationLibrary_nnjgc")
+
+[node name="Test" parent="." unique_id=921503120 node_paths=PackedStringArray("Parent") instance=ExtResource("10_nnjgc")]
+layer = 3
+visible = false
+Parent = NodePath("..")
+scene = ExtResource("11_ecywh")
+
+[node name="Podbor" type="Area2D" parent="." unique_id=394743809]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Podbor" unique_id=37060148]
+shape = SubResource("CircleShape2D_sdmle")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2101591385 node_paths=PackedStringArray("parent", "MoneyCountLabel", "HpProgressBar")]
+script = ExtResource("12_e6na4")
+parent = NodePath("..")
+MoneyCountLabel = NodePath("Control/Money")
+HpProgressBar = NodePath("Control/ProgressBar")
+
+[node name="Control" type="Control" parent="UI" unique_id=1479781073]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control" unique_id=2128461161]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 74.0
+offset_right = 65.0
+offset_bottom = 138.0
+texture = ExtResource("12_8lgby")
+
+[node name="Money" type="Label" parent="UI/Control" unique_id=1255425085]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 87.0
+offset_right = 183.0
+offset_bottom = 132.0
+text = " X 10"
+label_settings = SubResource("LabelSettings_sdmle")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Control" unique_id=119463757]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 70.0
+offset_bottom = 69.0
+texture = ExtResource("14_1dn68")
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Control" unique_id=791062717]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 26.0
+offset_right = 288.0
+offset_bottom = 53.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_grgi1")
+value = 100.0

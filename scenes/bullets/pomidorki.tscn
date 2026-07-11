@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://6td8b5ip8p4r"]
+
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="1_he8my"]
+[ext_resource type="PackedScene" uid="uid://8pcm334kxdsb" path="res://scenes/bullets/pomidorka_bullet.tscn" id="2_65w3l"]
+[ext_resource type="Texture2D" uid="uid://3mcbgfq8eerj" path="res://assets/ingridients/pomidor.png" id="2_fbwoq"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="3_j5car"]
+[ext_resource type="PackedScene" uid="uid://cgco31sd2c70r" path="res://scenes/bullets/kost_boom.tscn" id="4_j5car"]
+
+[sub_resource type="Resource" id="Resource_7gixr"]
+script = ExtResource("3_j5car")
+Damage = 1.0
+Speed = 300.0
+Acceleration = -100.0
+LifeTime = 1.5
+Randomness = 0.05
+BetweenAngle = 0.525
+StartAngle = 0.262
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[node name="AttackHandler" unique_id=166735263 instance=ExtResource("1_he8my")]
+bulletScene = ExtResource("2_65w3l")
+bulletResource = SubResource("Resource_7gixr")
+Count = 2
+Additionals = Array[PackedScene]([ExtResource("4_j5car")])
+
+[node name="Pomidor" type="Sprite2D" parent="." index="0" unique_id=1387041289]
+texture = ExtResource("2_fbwoq")

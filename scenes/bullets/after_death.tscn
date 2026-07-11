@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c7j5jxmq277ac"]
+
+[ext_resource type="Script" uid="uid://bc6bbiyb40lsr" path="res://scripts/player/AfterDeath.cs" id="1_5y813"]
+
+[node name="AfterDeath" type="Node" unique_id=318028220]
+script = ExtResource("1_5y813")

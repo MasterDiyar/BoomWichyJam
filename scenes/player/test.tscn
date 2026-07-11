@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dyclnrahg7pk"]
+
+[ext_resource type="Script" uid="uid://ckeve18vjy2aa" path="res://scripts/player/Test.cs" id="1_r3eo6"]
+
+[node name="Test" type="CanvasLayer" unique_id=921503120 node_paths=PackedStringArray("buttonAdd")]
+script = ExtResource("1_r3eo6")
+buttonAdd = NodePath("Button")
+
+[node name="Button" type="Button" parent="." unique_id=1994020752]
+offset_left = 1529.0
+offset_top = 612.0
+offset_right = 1650.0
+offset_bottom = 650.0
+text = "add"

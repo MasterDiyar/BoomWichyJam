@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cehdpy1ur4x4o"]
+
+[ext_resource type="Script" uid="uid://bkt4woh8pf7w" path="res://scripts/player/AttackHandler.cs" id="1_8c5h8"]
+
+[node name="AttackHandler" type="Node2D" unique_id=166735263]
+script = ExtResource("1_8c5h8")

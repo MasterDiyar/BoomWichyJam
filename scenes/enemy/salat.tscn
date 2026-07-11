@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ent0qqcaumoc"]
+
+[ext_resource type="PackedScene" uid="uid://04s8bvwaxff2" path="res://scenes/enemy/enemy.tscn" id="1_u3f2a"]
+[ext_resource type="Script" uid="uid://282cvyih62kp" path="res://scripts/resor/UnitResource.cs" id="2_v6tq5"]
+[ext_resource type="Texture2D" uid="uid://v5764vvq156c" path="res://assets/enemy/salat.png" id="3_e2pml"]
+[ext_resource type="Texture2D" uid="uid://b8irgw2oyhubv" path="res://assets/ingridients/eyes.png" id="4_ss107"]
+
+[sub_resource type="Resource" id="Resource_igl5a"]
+script = ExtResource("2_v6tq5")
+MaxHp = 100.0
+metadata/_custom_type_script = "uid://282cvyih62kp"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m5fnb"]
+radius = 26.019224
+
+[node name="Salat" unique_id=177023164 instance=ExtResource("1_u3f2a")]
+Resource = SubResource("Resource_igl5a")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=2034902037]
+shape = SubResource("CircleShape2D_m5fnb")
+
+[node name="Salat" type="Sprite2D" parent="." index="1" unique_id=1826791241]
+position = Vector2(-7, -14)
+texture = ExtResource("3_e2pml")
+
+[node name="Eyes" type="Sprite2D" parent="." index="2" unique_id=303303974]
+position = Vector2(-29, 9)
+texture = ExtResource("4_ss107")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 16)

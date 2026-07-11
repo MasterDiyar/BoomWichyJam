@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c2e8bd816mji"]
+
+[ext_resource type="Texture2D" uid="uid://bun680gu0xu2g" path="res://assets/Tiles_Color.jpg" id="1_4xfga"]
+[ext_resource type="PackedScene" uid="uid://bm4stp1uiixfs" path="res://scenes/player/hamburg.tscn" id="2_paxxb"]
+[ext_resource type="PackedScene" uid="uid://b73vutwvap5np" path="res://scenes/static/stol.tscn" id="3_0cso3"]
+[ext_resource type="PackedScene" uid="uid://bte1gs7dj2qc" path="res://scenes/static/holodos.tscn" id="4_2klcf"]
+[ext_resource type="PackedScene" uid="uid://ent0qqcaumoc" path="res://scenes/enemy/salat.tscn" id="5_2klcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmle"]
+size = Vector2(2047, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grgi1"]
+size = Vector2(20, 1026)
+
+[node name="map" type="Node2D" unique_id=1838604639]
+texture_filter = 3
+
+[node name="TilesColor" type="Sprite2D" parent="." unique_id=962608512]
+texture_repeat = 2
+position = Vector2(893, 510)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_4xfga")
+region_enabled = true
+region_rect = Rect2(0, 0, 16384, 8192)
+
+[node name="Hamburg" parent="." unique_id=959921502 instance=ExtResource("2_paxxb")]
+position = Vector2(405.40063, 342.00677)
+
+[node name="Camera2D2" type="Camera2D" parent="Hamburg" unique_id=1000855130]
+zoom = Vector2(2, 2)
+limit_left = -131
+limit_top = -2
+limit_right = 1917
+limit_bottom = 1022
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=189051822]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1666706752]
+position = Vector2(892.5, -2)
+shape = SubResource("RectangleShape2D_sdmle")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1493063833]
+position = Vector2(893, 1027)
+shape = SubResource("RectangleShape2D_sdmle")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1625294329]
+position = Vector2(-141, 513)
+shape = SubResource("RectangleShape2D_grgi1")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=22877184]
+position = Vector2(1921, 517)
+shape = SubResource("RectangleShape2D_grgi1")
+
+[node name="stol" parent="." unique_id=411328055 instance=ExtResource("3_0cso3")]
+position = Vector2(871, 213)
+scale = Vector2(2, 2)
+
+[node name="stol2" parent="." unique_id=1922447988 instance=ExtResource("3_0cso3")]
+position = Vector2(869, 538)
+scale = Vector2(2, 2)
+
+[node name="stol3" parent="." unique_id=54949313 instance=ExtResource("3_0cso3")]
+position = Vector2(1120, 542)
+scale = Vector2(2, 2)
+
+[node name="stol4" parent="." unique_id=1997859041 instance=ExtResource("3_0cso3")]
+position = Vector2(1101, 212)
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D2" parent="." unique_id=1064262322 instance=ExtResource("4_2klcf")]
+position = Vector2(-1, 381)
+scale = Vector2(2, 2)
+
+[node name="Salat" parent="." unique_id=177023164 instance=ExtResource("5_2klcf")]
+position = Vector2(665, 353)

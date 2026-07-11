@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bo5lb3q831igy"]
+
+[ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_jpbfp"]
+[ext_resource type="Texture2D" uid="uid://lo7au6s4idl6" path="res://assets/ingridients/kost.png" id="2_ow6il"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j5car"]
+radius = 3.0
+height = 14.0
+
+[node name="kost" unique_id=384085446 instance=ExtResource("1_jpbfp")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=150551673]
+rotation = -1.5707964
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CapsuleShape2D_j5car")
+
+[node name="Kost" type="Sprite2D" parent="." index="1" unique_id=184123779]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_ow6il")

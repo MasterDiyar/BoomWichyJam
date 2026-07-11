@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://8pcm334kxdsb"]
+
+[ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_mbk6u"]
+[ext_resource type="Texture2D" uid="uid://3mcbgfq8eerj" path="res://assets/ingridients/pomidor.png" id="2_0yx5e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_65w3l"]
+radius = 6.0
+height = 26.0
+
+[node name="pomidorka_bullet" unique_id=384085446 instance=ExtResource("1_mbk6u")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=150551673]
+rotation = 1.3439035
+shape = SubResource("CapsuleShape2D_65w3l")
+
+[node name="Pomidor" type="Sprite2D" parent="." index="1" unique_id=1108164618]
+texture = ExtResource("2_0yx5e")
+region_enabled = true
+region_rect = Rect2(0, 27.865711, 32.984375, 20.511463)

@@ -6,7 +6,7 @@ public partial class Bullet : Area2D
 {
 	public IDamagable parent;
 	public BulletResource BulletResource;
-	public float LifeTime, Damage, Speed, Pierce, Acceleration;
+	public float LifeTime, Damage = 1, Speed, Pierce, Acceleration;
 	
 	public override void _Ready()
 	{

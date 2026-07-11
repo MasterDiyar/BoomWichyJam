@@ -3,5 +3,5 @@ using System;
 
 public partial class Money : Area2D
 {
-	[Export] public int Count = 1;
+	[Export] public float Count = 1;
 }

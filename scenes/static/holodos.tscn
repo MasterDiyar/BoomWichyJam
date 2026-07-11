@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmle"]
 size = Vector2(56, 106)
 
-[node name="StaticBody2D" type="StaticBody2D" unique_id=1064262322]
+[node name="Holodos" type="StaticBody2D" unique_id=1064262322]
 texture_filter = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1440853057]

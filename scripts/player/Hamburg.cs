@@ -15,7 +15,6 @@ public partial class Hamburg : CharacterBody2D, IDamagable
 	public float MaxHp, MaxSpeed, MaxShield;
 	public float Hp { get; set; }
 	public float Shield {get; set;}
-	public int Money;
 	
 
 	private float Speed = 30;
@@ -95,7 +94,8 @@ public partial class Hamburg : CharacterBody2D, IDamagable
 	{
 		if (area is Money n)
 		{
-			Money += n.Count;
+			GlobalController.Instance.Money += n.Count;
+			n.QueueFree();
 			MoneyChanged?.Invoke();
 		}
 	}

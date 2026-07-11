@@ -10,6 +10,7 @@ Damage = 5.0
 Speed = 150.0
 Acceleration = 50.0
 LifeTime = 0.5
+Pierce = 1.0
 metadata/_custom_type_script = "uid://crcr77siy7s7o"
 
 [node name="KostBoom" type="Node" unique_id=1918047777]

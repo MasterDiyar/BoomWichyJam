@@ -12,6 +12,7 @@ Damage = 1.0
 Speed = 300.0
 Acceleration = -100.0
 LifeTime = 1.5
+Pierce = 1.5
 Randomness = 0.05
 BetweenAngle = 0.525
 StartAngle = 0.262

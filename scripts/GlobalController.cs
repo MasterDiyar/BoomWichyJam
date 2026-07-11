@@ -3,13 +3,11 @@ using System;
 
 public partial class GlobalController : Node
 {
-	[Export] public float MoneyAmplifier;
+	[Export] public float MoneyAmplifier = 1;
+	public float Money=0;
+	public static GlobalController Instance;
 	public override void _Ready()
 	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		Instance = this;
 	}
 }

@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://x3mm2aevht66" path="res://assets/ingridients/money.png" id="12_8lgby"]
 [ext_resource type="Script" uid="uid://dtbe5ur0noggs" path="res://scripts/player/Ui.cs" id="12_e6na4"]
 [ext_resource type="Texture2D" uid="uid://clto3ohnmh20q" path="res://assets/ingridients/hp.png" id="14_1dn68"]
+[ext_resource type="PackedScene" uid="uid://dl4xui08m6ef6" path="res://scenes/player/holodos.tscn" id="15_c6m37"]
 
 [sub_resource type="Resource" id="Resource_521od"]
 script = ExtResource("2_an2w6")
@@ -263,3 +264,9 @@ offset_right = 288.0
 offset_bottom = 53.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_grgi1")
 value = 100.0
+
+[node name="Holodos" parent="UI" unique_id=1192082827 instance=ExtResource("15_c6m37")]
+offset_left = 967.0
+offset_top = 532.0
+offset_right = -953.0
+offset_bottom = -548.0

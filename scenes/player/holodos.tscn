@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://dl4xui08m6ef6"]
+
+[ext_resource type="Script" uid="uid://bb0pdkq7cdn21" path="res://scripts/player/Holodos.cs" id="1_4q6xi"]
+[ext_resource type="Texture2D" uid="uid://nk2obd0ah2fy" path="res://assets/ingridients/holodos.png" id="1_6pnc0"]
+[ext_resource type="PackedScene" uid="uid://8t1js801ykr0" path="res://scenes/player/upgrade_button.tscn" id="2_jysym"]
+[ext_resource type="Script" uid="uid://cx6poevkfjngu" path="res://scripts/resor/UpgradeResource.cs" id="4_1io5f"]
+[ext_resource type="Texture2D" uid="uid://3mcbgfq8eerj" path="res://assets/ingridients/pomidor.png" id="5_pf6sa"]
+[ext_resource type="Texture2D" uid="uid://clto3ohnmh20q" path="res://assets/ingridients/hp.png" id="6_flmjc"]
+
+[sub_resource type="Resource" id="Resource_grgi1"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("5_pf6sa")
+Name = "pomidor 1"
+Count = 1
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_ckvpb"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("6_flmjc")
+Name = "pomidor 2"
+Count = 10
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[node name="Holodos" type="Control" unique_id=1192082827 node_paths=PackedStringArray("ExitButton")]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4q6xi")
+ExitButton = NodePath("Button")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=164583534]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6pnc0")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=855493934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 220
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect/MarginContainer" unique_id=822891953]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 45
+columns = 2
+
+[node name="UpgradeButton" parent="TextureRect/MarginContainer/GridContainer" unique_id=1841694482 instance=ExtResource("2_jysym")]
+layout_mode = 2
+upgrades = Array[Object]([SubResource("Resource_grgi1"), SubResource("Resource_ckvpb")])
+
+[node name="UpgradeButton2" parent="TextureRect/MarginContainer/GridContainer" unique_id=1618943306 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="UpgradeButton3" parent="TextureRect/MarginContainer/GridContainer" unique_id=1519371132 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="UpgradeButton4" parent="TextureRect/MarginContainer/GridContainer" unique_id=1191978042 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="UpgradeButton5" parent="TextureRect/MarginContainer/GridContainer" unique_id=750487003 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="UpgradeButton6" parent="TextureRect/MarginContainer/GridContainer" unique_id=235410032 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="UpgradeButton7" parent="TextureRect/MarginContainer/GridContainer" unique_id=509533805 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="UpgradeButton8" parent="TextureRect/MarginContainer/GridContainer" unique_id=801243753 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="UpgradeButton9" parent="TextureRect/MarginContainer/GridContainer" unique_id=653391829 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="UpgradeButton10" parent="TextureRect/MarginContainer/GridContainer" unique_id=1475708613 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="UpgradeButton11" parent="TextureRect/MarginContainer/GridContainer" unique_id=835004148 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="UpgradeButton12" parent="TextureRect/MarginContainer/GridContainer" unique_id=329275996 instance=ExtResource("2_jysym")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=1618532208]
+layout_mode = 0
+offset_left = 323.0
+offset_top = -481.0
+offset_right = 375.0
+offset_bottom = -438.0
+text = "X"

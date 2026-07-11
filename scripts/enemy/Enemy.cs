@@ -29,7 +29,10 @@ public partial class Enemy : CharacterBody2D, IDamagable
 
     public void OnDie()
     {
-        
+        Money money = Money.Instantiate<Money>();
+        money.Count = MoneyCount * GlobalController.Instance.MoneyAmplifier;
+        money.Position = GlobalPosition + Vector2.FromAngle(GD.Randf() * Mathf.Tau) * 10f;
+        GetTree().Root.CallDeferred("add_child", money);
         QueueFree();
     }
 }

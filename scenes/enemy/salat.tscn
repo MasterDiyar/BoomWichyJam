@@ -3,11 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://04s8bvwaxff2" path="res://scenes/enemy/enemy.tscn" id="1_u3f2a"]
 [ext_resource type="Script" uid="uid://282cvyih62kp" path="res://scripts/resor/UnitResource.cs" id="2_v6tq5"]
 [ext_resource type="Texture2D" uid="uid://v5764vvq156c" path="res://assets/enemy/salat.png" id="3_e2pml"]
+[ext_resource type="PackedScene" uid="uid://cbvkur2781wh" path="res://scenes/enemy/money.tscn" id="3_ss107"]
 [ext_resource type="Texture2D" uid="uid://b8irgw2oyhubv" path="res://assets/ingridients/eyes.png" id="4_ss107"]
 
 [sub_resource type="Resource" id="Resource_igl5a"]
 script = ExtResource("2_v6tq5")
-MaxHp = 100.0
+MaxHp = 20.0
 metadata/_custom_type_script = "uid://282cvyih62kp"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m5fnb"]
@@ -15,6 +16,8 @@ radius = 26.019224
 
 [node name="Salat" unique_id=177023164 instance=ExtResource("1_u3f2a")]
 Resource = SubResource("Resource_igl5a")
+Money = ExtResource("3_ss107")
+MoneyCount = 3
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=2034902037]
 shape = SubResource("CircleShape2D_m5fnb")

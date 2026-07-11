@@ -22,7 +22,7 @@ public partial class Ui : CanvasLayer
 
 	private void MoneyChanged()
 	{
-		MoneyCountLabel.Text = $"X{parent.Money}";
+		MoneyCountLabel.Text = $"X{(int)GlobalController.Instance.Money}";
 	}
 	
 	

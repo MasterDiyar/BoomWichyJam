@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dgyplhcxa1i0u"]
+
+[ext_resource type="Script" uid="uid://dc4ag0qq1y0qp" path="res://scripts/enemy/Ai.cs" id="1_a85jq"]
+
+[node name="AI" type="Node2D" unique_id=811088688]
+script = ExtResource("1_a85jq")

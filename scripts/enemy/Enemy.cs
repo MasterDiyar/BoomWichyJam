@@ -1,14 +1,17 @@
 using Godot;
 using System;
+using BoomWichi;
 using BoomWichi.scripts;
+using BoomWichi.scripts.enemy;
 
-public partial class Enemy : CharacterBody2D, IDamagable
+public partial class Enemy : Entity
 {
-
     [Export] public UnitResource Resource;
     [Export] private PackedScene Money;
     [Export] private int MoneyCount; 
 
+    public Action<float> AttackAction { get; set; }
+    
     public float Hp { get; set; }
     public float MaxHp, MaxSpeed, MaxShield;
 
@@ -20,7 +23,7 @@ public partial class Enemy : CharacterBody2D, IDamagable
         Hp = MaxHp;
     }
 
-    public void TakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         Hp -= damage;
         if (Hp <= 0)

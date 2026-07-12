@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cvrh3ag0tp331"]
+
+[ext_resource type="PackedScene" uid="uid://04s8bvwaxff2" path="res://scenes/enemy/enemy.tscn" id="1_da4s6"]
+[ext_resource type="Texture2D" uid="uid://1wabjl52gqfo" path="res://assets/enemy/plesen.png" id="2_i8hag"]
+
+[node name="Enemy" unique_id=177023164 instance=ExtResource("1_da4s6")]
+
+[node name="Plesen" type="Sprite2D" parent="." index="1" unique_id=2116543100]
+rotation = 1.0384709
+skew = -0.07853982
+texture = ExtResource("2_i8hag")

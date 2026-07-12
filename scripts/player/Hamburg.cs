@@ -1,19 +1,20 @@
 using Godot;
 using System;
+using BoomWichi;
 using BoomWichi.scripts;
+using BoomWichi.scripts.enemy;
 
-public partial class Hamburg : CharacterBody2D, IDamagable
+public partial class Hamburg : Entity
 {
 	[Export] public UnitResource playerResource;
 	[Export] public AnimationPlayer animationPlayer;
 	[Export] public Node2D whereAdd, Head, body;
 	[Export] public Area2D CollectArea;
 
-	public Action<float> AttackAction;
+	public Action<float> AttackAction { get; set; }
 	public Action MoneyChanged, HpChanged, OpenHolodilnik;
 
 	public float MaxHp, MaxSpeed, MaxShield;
-	public float Hp { get; set; }
 	public float Shield { get; set; }
 
 
@@ -86,7 +87,7 @@ public partial class Hamburg : CharacterBody2D, IDamagable
 		}
 	}
 
-	public void TakeDamage(float damage)
+	public override void TakeDamage(float damage)
 	{
 		if (Shield > 0)
 		{

@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using BoomWichi;
+using BoomWichi.scripts.enemy;
 
 public partial class AttackHandler : Node2D
 {
@@ -12,10 +14,10 @@ public partial class AttackHandler : Node2D
 	[Export] public PackedScene[] Additionals;
 	private float TimeAfterAttack = 0;
 	private bool CanAttack = true;
-	private Hamburg parent;
+	private Entity parent;
 	public override void _Ready()
 	{
-		parent =GetParent().GetParent().GetParent<Hamburg>();
+		parent = this.GetFirstParentOfType<Entity>();
 		parent.AttackAction += AttackAction;
 	}
 
@@ -46,9 +48,8 @@ public partial class AttackHandler : Node2D
 	public override void _Process(double delta)
 	{
 		if (TimeAfterAttack > 0)
-		{
 			TimeAfterAttack -= (float)delta;
-		}
+		
 		else CanAttack = true;
 	}
 }

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c34updt837pxh"]
+
+[ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_ffrsa"]
+[ext_resource type="Texture2D" uid="uid://l4ljwf3od5kn" path="res://assets/ingridients/sok.png" id="2_342ls"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdmle"]
+radius = 46.0
+
+[node name="Saft" unique_id=384085446 instance=ExtResource("1_ffrsa")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=150551673]
+position = Vector2(2, -3)
+shape = SubResource("CircleShape2D_sdmle")
+
+[node name="Sok" type="Sprite2D" parent="." index="1" unique_id=249287150]
+position = Vector2(0, -12)
+texture = ExtResource("2_342ls")

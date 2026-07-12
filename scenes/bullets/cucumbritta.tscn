@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://o5wa0load3ti"]
+
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="1_tinwx"]
+[ext_resource type="PackedScene" uid="uid://dk586x5nilvrr" path="res://scenes/bullets/oguritsa.tscn" id="2_i266m"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="3_disin"]
+[ext_resource type="Texture2D" uid="uid://u8pxa5qm5sch" path="res://assets/ingridients/Cucumber.png" id="4_irdym"]
+
+[sub_resource type="Resource" id="Resource_upebg"]
+script = ExtResource("3_disin")
+Damage = 25.0
+Speed = 250.0
+LifeTime = 2.0
+Pierce = 2.0
+Randomness = 0.4
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[node name="AttackHandler" unique_id=166735263 instance=ExtResource("1_tinwx")]
+texture_filter = 3
+bulletScene = ExtResource("2_i266m")
+bulletResource = SubResource("Resource_upebg")
+AttackSpeed = 4.0
+Offset = 16.0
+
+[node name="Cucumber" type="Sprite2D" parent="." index="0" unique_id=718296145]
+skew = 0.58817595
+texture = ExtResource("4_irdym")

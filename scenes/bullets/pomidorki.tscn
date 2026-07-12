@@ -25,4 +25,6 @@ Count = 2
 Additionals = Array[PackedScene]([ExtResource("4_j5car")])
 
 [node name="Pomidor" type="Sprite2D" parent="." index="0" unique_id=1387041289]
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(1, 0.734375)
 texture = ExtResource("2_fbwoq")

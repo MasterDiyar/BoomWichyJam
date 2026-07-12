@@ -5,7 +5,14 @@ public partial class Upgrader : Node
 {
 	public enum What
 	{
-		Tomato
+		Tomato,
+		Cucumber,
+		Lettuce,
+		Egg,
+		Kotlet,
+		Bacon,
+		Cheese,
+		RedOnion
 	}
 
 	[Export] private What _what;
@@ -25,9 +32,8 @@ public partial class Upgrader : Node
 		player.MoneyChanged?.Invoke();
 		switch (_what)
 		{
-			case What.Tomato:
-				TomatoUpgrade(obj);
-				break;
+			case What.Tomato: TomatoUpgrade(obj); break;
+			case What.Cucumber: CucumberUpgrade(obj); break;
 		}
 	}
 
@@ -51,5 +57,27 @@ public partial class Upgrader : Node
 				break;
 		}
 	}
+
+	private void CucumberUpgrade(int level)
+	{
+		switch (level)
+		{
+			case 1:
+				var scene = GD.Load<PackedScene>("res://scenes/bullets/cucumbritta.tscn");
+				player.AddIngridient(scene, What.Cucumber);
+				break;
+			case 2:
+				player.Cucumber.Additionals = [GD.Load<PackedScene>("res://scenes/bullets/ogurets_boom.tscn")];
+				player.Cucumber.bulletResource.Speed += 90;
+				break;
+			case 3:
+				player.Cucumber.bulletResource.Speed += 90;
+				player.Cucumber.bulletResource.Randomness = 0.2f;
+				player.Cucumber.bulletResource.Damage += 10;
+				break;
+		}
+	}
+	
+	
 	
 }

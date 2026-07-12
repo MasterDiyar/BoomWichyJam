@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bhi46c0uu6bgj"]
+
+[ext_resource type="Script" uid="uid://mxn8ieo7xgmk" path="res://scripts/enemy/Duplicator.cs" id="1_s3jtv"]
+
+
+[node name="Duplicator" type="Node" unique_id=1822572292 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_s3jtv")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="." unique_id=885392634]
+wait_time = 4.0
+autostart = true

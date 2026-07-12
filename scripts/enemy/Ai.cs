@@ -78,7 +78,7 @@ public partial class Ai : Node2D
 	void Act(float dt) {
 		switch (type) {
 			case Type.Rusher:
-				if (IsInstanceValid(holodos)) holodos = null;
+				if (!IsInstanceValid(holodos)) holodos = null;
 				if (holodos != null)MoveTo(holodos.GlobalPosition);
 				break;
 			case Type.Attacker:

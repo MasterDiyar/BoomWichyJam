@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="11_reuo5"]
 [ext_resource type="PackedScene" uid="uid://c2d18bqph4b31" path="res://scenes/bullets/bacterios.tscn" id="12_0r21u"]
 [ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="13_mbg5p"]
+[ext_resource type="PackedScene" uid="uid://bhi46c0uu6bgj" path="res://scenes/enemy/duplicator.tscn" id="14_c5chv"]
 
 [sub_resource type="Resource" id="Resource_sdmle"]
 script = ExtResource("2_ds8dr")
@@ -74,3 +75,5 @@ shape = SubResource("CircleShape2D_grgi1")
 [node name="AttackHandler" parent="." index="6" unique_id=166735263 instance=ExtResource("11_reuo5")]
 bulletScene = ExtResource("12_0r21u")
 bulletResource = SubResource("Resource_tvc2c")
+
+[node name="Duplicator" parent="." index="7" unique_id=1822572292 instance=ExtResource("14_c5chv")]

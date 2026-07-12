@@ -9,7 +9,8 @@ public partial class KostBoom : AfterDeath
 	[Export] private int Count = 6;
 	public override void After_Death()
 	{
-		Count = GlobalController.Instance.TomatoSeedCount;
+		if (!IsInGroup("unadd"))
+			Count = GlobalController.Instance.TomatoSeedCount;
 		var p = GetParent<Bullet>();
 		for (int i = 0; i < Count; i++)
 		{

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dk586x5nilvrr"]
+
+[ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_dchdy"]
+[ext_resource type="Texture2D" uid="uid://du54fp10mbg52" path="res://assets/ingridients/ogurets.png" id="2_fkp8n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdmle"]
+radius = 4.0
+height = 18.0
+
+[node name="bullet" unique_id=384085446 instance=ExtResource("1_dchdy")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=150551673]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_sdmle")
+
+[node name="Ogurets" type="Sprite2D" parent="." index="1" unique_id=862943217]
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_fkp8n")

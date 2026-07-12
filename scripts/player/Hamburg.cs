@@ -20,7 +20,14 @@ public partial class Hamburg : Entity
 	private float Speed = 30;
 	private bool _canOpen = false;
 
-	public AttackHandler Pomidor;
+	public AttackHandler Pomidor,
+		Cucumber,
+		Lettuce,
+		Egg,
+		Kotlet,
+		Bacon,
+		Cheese,
+		RedOnion;
 
 
 	public override void _Ready()
@@ -81,9 +88,14 @@ public partial class Hamburg : Entity
 
 		switch (what)
 		{
-			case Upgrader.What.Tomato:
-				Pomidor = ingridient;
-				break;
+			case Upgrader.What.Tomato: Pomidor = ingridient; break;
+			case Upgrader.What.Cucumber: Cucumber = ingridient; break;
+			case Upgrader.What.Lettuce: Lettuce = ingridient; break;
+			case Upgrader.What.Egg: Egg = ingridient; break;
+			case Upgrader.What.Kotlet: Kotlet = ingridient; break;
+			case Upgrader.What.Bacon: Bacon = ingridient; break;
+			case Upgrader.What.RedOnion: RedOnion = ingridient; break;
+			case Upgrader.What.Cheese: Cheese = ingridient; break;
 		}
 	}
 

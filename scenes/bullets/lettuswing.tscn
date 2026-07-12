@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://di1x4tel4rejo"]
+
+[ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_kdvv8"]
+[ext_resource type="Texture2D" uid="uid://bgkarckto3wn0" path="res://assets/ingridients/lettuce_swing.png" id="2_2kwtk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ckvpb"]
+radius = 33.63
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hghtl"]
+atlas = ExtResource("2_2kwtk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uifm8"]
+atlas = ExtResource("2_2kwtk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47s2b"]
+atlas = ExtResource("2_2kwtk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp0l4"]
+atlas = ExtResource("2_2kwtk")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7e7n"]
+atlas = ExtResource("2_2kwtk")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_grgi1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hghtl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uifm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47s2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp0l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7e7n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="bullet" unique_id=384085446 instance=ExtResource("1_kdvv8")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=150551673]
+shape = SubResource("CircleShape2D_ckvpb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=152049842]
+sprite_frames = SubResource("SpriteFrames_grgi1")
+frame_progress = 0.8736826

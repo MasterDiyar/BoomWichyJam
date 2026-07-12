@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://3mcbgfq8eerj" path="res://assets/ingridients/pomidor.png" id="5_pf6sa"]
 [ext_resource type="Texture2D" uid="uid://clto3ohnmh20q" path="res://assets/ingridients/hp.png" id="6_flmjc"]
 [ext_resource type="PackedScene" uid="uid://d0p7jvte8yxo2" path="res://scenes/player/upgrader.tscn" id="7_1io5f"]
+[ext_resource type="Texture2D" uid="uid://du54fp10mbg52" path="res://assets/ingridients/ogurets.png" id="8_vt2r8"]
+[ext_resource type="Texture2D" uid="uid://u8pxa5qm5sch" path="res://assets/ingridients/Cucumber.png" id="9_q64ja"]
+[ext_resource type="Texture2D" uid="uid://l4ljwf3od5kn" path="res://assets/ingridients/sok.png" id="10_n2gxh"]
 
 [sub_resource type="Resource" id="Resource_grgi1"]
 script = ExtResource("4_1io5f")
@@ -30,6 +33,30 @@ texture = ExtResource("5_pf6sa")
 Name = "томатики 3"
 Count = 50
 Description = "Уменьшает разброс и увеличивает количество косточек и их урон"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_gnfjy"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("8_vt2r8")
+Name = "Огурчик"
+Count = 10
+Description = "Стрелять сильным патроном"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_mar0n"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("9_q64ja")
+Name = "Взрывные пикули"
+Count = 20
+Description = "Патрон подрывается"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_41o8v"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("10_n2gxh")
+Name = "Кислотно"
+Count = 100
+Description = "Кислота"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [node name="Holodos" type="Control" unique_id=1192082827 node_paths=PackedStringArray("ExitButton")]
@@ -84,8 +111,12 @@ upgrades = Array[Object]([SubResource("Resource_grgi1"), SubResource("Resource_c
 
 [node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/pomidor" unique_id=1605457177 instance=ExtResource("7_1io5f")]
 
-[node name="UpgradeButton2" parent="TextureRect/MarginContainer/GridContainer" unique_id=1618943306 instance=ExtResource("2_jysym")]
+[node name="ogurets" parent="TextureRect/MarginContainer/GridContainer" unique_id=1618943306 instance=ExtResource("2_jysym")]
 layout_mode = 2
+upgrades = Array[Object]([SubResource("Resource_gnfjy"), SubResource("Resource_mar0n"), SubResource("Resource_41o8v")])
+
+[node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/ogurets" unique_id=1443516481 instance=ExtResource("7_1io5f")]
+_what = 1
 
 [node name="UpgradeButton3" parent="TextureRect/MarginContainer/GridContainer" unique_id=1519371132 instance=ExtResource("2_jysym")]
 layout_mode = 2

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c6qvuxfjr5f11"]
+
+[ext_resource type="PackedScene" uid="uid://cgco31sd2c70r" path="res://scenes/bullets/kost_boom.tscn" id="1_o6mlx"]
+[ext_resource type="PackedScene" uid="uid://c34updt837pxh" path="res://scenes/bullets/saft.tscn" id="2_wtoq0"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="3_wtoq0"]
+
+[sub_resource type="Resource" id="Resource_gnfjy"]
+script = ExtResource("3_wtoq0")
+Damage = 5.0
+LifeTime = 0.5
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[node name="KostBoom" unique_id=1918047777 groups=["unadd"] instance=ExtResource("1_o6mlx")]
+bulletScene = ExtResource("2_wtoq0")
+bulletResource = SubResource("Resource_gnfjy")
+Count = 1

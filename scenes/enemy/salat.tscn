@@ -5,14 +5,31 @@
 [ext_resource type="Texture2D" uid="uid://v5764vvq156c" path="res://assets/enemy/salat.png" id="3_e2pml"]
 [ext_resource type="PackedScene" uid="uid://cbvkur2781wh" path="res://scenes/enemy/money.tscn" id="3_ss107"]
 [ext_resource type="Texture2D" uid="uid://b8irgw2oyhubv" path="res://assets/ingridients/eyes.png" id="4_ss107"]
+[ext_resource type="PackedScene" uid="uid://dgyplhcxa1i0u" path="res://scenes/enemy/ai.tscn" id="6_ss107"]
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="7_l8evi"]
+[ext_resource type="PackedScene" uid="uid://8pcm334kxdsb" path="res://scenes/bullets/pomidorka_bullet.tscn" id="8_vv5fh"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="9_4hw6p"]
 
 [sub_resource type="Resource" id="Resource_igl5a"]
 script = ExtResource("2_v6tq5")
 MaxHp = 20.0
+MaxSpeed = 50.0
 metadata/_custom_type_script = "uid://282cvyih62kp"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m5fnb"]
 radius = 26.019224
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdmle"]
+radius = 247.77812
+
+[sub_resource type="Resource" id="Resource_ss107"]
+script = ExtResource("9_4hw6p")
+Damage = 15.0
+Speed = 90.0
+Acceleration = 40.0
+LifeTime = 2.5
+Pierce = 0.1
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
 
 [node name="Salat" unique_id=177023164 instance=ExtResource("1_u3f2a")]
 Resource = SubResource("Resource_igl5a")
@@ -31,3 +48,17 @@ position = Vector2(-29, 9)
 texture = ExtResource("4_ss107")
 region_enabled = true
 region_rect = Rect2(32, 0, 32, 16)
+
+[node name="AI" parent="." index="3" unique_id=811088688 node_paths=PackedStringArray("mob", "vision") instance=ExtResource("6_ss107")]
+mob = NodePath("..")
+vision = NodePath("../Area2D")
+
+[node name="Area2D" type="Area2D" parent="." index="4" unique_id=151236859]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=1226071]
+shape = SubResource("CircleShape2D_sdmle")
+
+[node name="AttackHandler" parent="." index="5" unique_id=166735263 instance=ExtResource("7_l8evi")]
+bulletScene = ExtResource("8_vv5fh")
+bulletResource = SubResource("Resource_ss107")
+Offset = 15.0

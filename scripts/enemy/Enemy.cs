@@ -9,8 +9,6 @@ public partial class Enemy : Entity
     [Export] public UnitResource Resource;
     [Export] private PackedScene Money;
     [Export] private int MoneyCount; 
-
-    public Action<float> AttackAction { get; set; }
     
     public float Hp { get; set; }
     public float MaxHp, MaxSpeed, MaxShield;

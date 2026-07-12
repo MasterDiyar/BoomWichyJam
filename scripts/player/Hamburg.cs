@@ -11,7 +11,6 @@ public partial class Hamburg : Entity
 	[Export] public Node2D whereAdd, Head, body;
 	[Export] public Area2D CollectArea;
 
-	public Action<float> AttackAction { get; set; }
 	public Action MoneyChanged, HpChanged, OpenHolodilnik;
 
 	public float MaxHp, MaxSpeed, MaxShield;

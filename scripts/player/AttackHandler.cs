@@ -23,6 +23,7 @@ public partial class AttackHandler : Node2D
 
 	private void AttackAction(float angle)
 	{
+		GD.Print(angle);
 		if (!CanAttack) return;
 		CanAttack = false;
 		TimeAfterAttack = AttackSpeed;

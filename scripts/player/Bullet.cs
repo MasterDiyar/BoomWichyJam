@@ -1,10 +1,11 @@
 using Godot;
 using System;
 using BoomWichi.scripts;
+using BoomWichi.scripts.enemy;
 
 public partial class Bullet : Area2D
 {
-	public IDamagable parent;
+	public Entity parent;
 	public BulletResource BulletResource;
 	public float LifeTime, Damage = 1, Speed, Pierce, Acceleration;
 	

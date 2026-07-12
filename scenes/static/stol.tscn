@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b73vutwvap5np"]
 
+[ext_resource type="Script" uid="uid://qpwq7thm7j54" path="res://scripts/game/Statics.cs" id="1_16c1x"]
 [ext_resource type="Texture2D" uid="uid://cyxlegnfvc68c" path="res://assets/stol.png" id="1_ocirm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmle"]
@@ -7,6 +8,8 @@ size = Vector2(59, 41)
 
 [node name="stol" type="StaticBody2D" unique_id=411328055]
 texture_filter = 3
+script = ExtResource("1_16c1x")
+Health = 80.0
 
 [node name="Stol" type="Sprite2D" parent="." unique_id=36309526]
 position = Vector2(0, 1)

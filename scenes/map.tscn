@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cx44pjgp5d1bj" path="res://scenes/game/spawner.tscn" id="6_blm8a"]
 [ext_resource type="PackedScene" uid="uid://cvrh3ag0tp331" path="res://scenes/enemy/plesen.tscn" id="7_nakos"]
 [ext_resource type="Script" uid="uid://duur4y33byp2e" path="res://scripts/resor/SpawnResource.cs" id="8_mlgqr"]
+[ext_resource type="PackedScene" uid="uid://cftlf8g2dtca1" path="res://scenes/enemy/bacteria.tscn" id="10_mlgqr"]
 [ext_resource type="Script" uid="uid://cklen35vhpm66" path="res://scripts/resor/WaveResource.cs" id="10_wslke"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lpho"]
@@ -40,9 +41,14 @@ Unit = ExtResource("5_2klcf")
 SpawnOffset = 40.0
 metadata/_custom_type_script = "uid://duur4y33byp2e"
 
+[sub_resource type="Resource" id="Resource_wslke"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("10_mlgqr")
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
 [sub_resource type="Resource" id="Resource_xeolc"]
 script = ExtResource("10_wslke")
-Units = Array[Object]([SubResource("Resource_xydd0"), SubResource("Resource_p1dyn")])
+Units = Array[Object]([SubResource("Resource_xydd0"), SubResource("Resource_p1dyn"), SubResource("Resource_wslke")])
 metadata/_custom_type_script = "uid://cklen35vhpm66"
 
 [sub_resource type="Resource" id="Resource_c4q3t"]

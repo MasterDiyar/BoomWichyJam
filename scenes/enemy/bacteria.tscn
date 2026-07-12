@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cftlf8g2dtca1"]
+
+[ext_resource type="PackedScene" uid="uid://04s8bvwaxff2" path="res://scenes/enemy/enemy.tscn" id="1_y6nki"]
+[ext_resource type="Script" uid="uid://282cvyih62kp" path="res://scripts/resor/UnitResource.cs" id="2_ds8dr"]
+[ext_resource type="PackedScene" uid="uid://cbvkur2781wh" path="res://scenes/enemy/money.tscn" id="3_kgsu2"]
+[ext_resource type="Script" uid="uid://b5pyc845fqwo8" path="res://scripts/enemy/MainTexture.cs" id="4_pqq34"]
+[ext_resource type="Texture2D" uid="uid://3du1kc7pjmqq" path="res://assets/enemy/bacter/b1.png" id="5_c5chv"]
+[ext_resource type="Texture2D" uid="uid://dkd51xaoa8x6g" path="res://assets/enemy/bacter/b2.png" id="6_8swu7"]
+[ext_resource type="Texture2D" uid="uid://cg7s3ma3868uj" path="res://assets/enemy/bacter/b3.png" id="7_pa1ov"]
+[ext_resource type="Texture2D" uid="uid://dcdqsl58ejgyh" path="res://assets/enemy/bacter/details.png" id="8_5y6ye"]
+[ext_resource type="Script" uid="uid://bod1phmsk38xf" path="res://scripts/enemy/SecondTexture.cs" id="9_kuglw"]
+[ext_resource type="PackedScene" uid="uid://dgyplhcxa1i0u" path="res://scenes/enemy/ai.tscn" id="10_ypyn4"]
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="11_reuo5"]
+[ext_resource type="PackedScene" uid="uid://c2d18bqph4b31" path="res://scenes/bullets/bacterios.tscn" id="12_0r21u"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="13_mbg5p"]
+
+[sub_resource type="Resource" id="Resource_sdmle"]
+script = ExtResource("2_ds8dr")
+MaxHp = 10.0
+MaxSpeed = 20.0
+metadata/_custom_type_script = "uid://282cvyih62kp"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ckvpb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_grgi1"]
+radius = 21.0
+
+[sub_resource type="Resource" id="Resource_tvc2c"]
+script = ExtResource("13_mbg5p")
+Damage = 5.0
+Speed = 100.0
+Acceleration = 1000.0
+LifeTime = 0.3
+Pierce = 0.1
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[node name="Enemy" unique_id=177023164 instance=ExtResource("1_y6nki")]
+Resource = SubResource("Resource_sdmle")
+Money = ExtResource("3_kgsu2")
+MoneyCount = 3
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=2034902037]
+shape = SubResource("CapsuleShape2D_ckvpb")
+
+[node name="SecondTexture" type="Sprite2D" parent="." index="1" unique_id=594029131]
+position = Vector2(3, -4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_5y6ye")
+region_enabled = true
+script = ExtResource("9_kuglw")
+
+[node name="SecondTexture2" type="Sprite2D" parent="." index="2" unique_id=231830170]
+position = Vector2(2, 9)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_5y6ye")
+region_enabled = true
+script = ExtResource("9_kuglw")
+
+[node name="MainTexture" type="Sprite2D" parent="." index="3" unique_id=1070805956]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("4_pqq34")
+text = Array[Texture2D]([ExtResource("5_c5chv"), ExtResource("6_8swu7"), ExtResource("7_pa1ov")])
+
+[node name="AI" parent="." index="4" unique_id=811088688 node_paths=PackedStringArray("mob", "vision") instance=ExtResource("10_ypyn4")]
+type = 1
+mob = NodePath("..")
+vision = NodePath("../Area2D")
+
+[node name="Area2D" type="Area2D" parent="." index="5" unique_id=1947746546]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=915062006]
+shape = SubResource("CircleShape2D_grgi1")
+
+[node name="AttackHandler" parent="." index="6" unique_id=166735263 instance=ExtResource("11_reuo5")]
+bulletScene = ExtResource("12_0r21u")
+bulletResource = SubResource("Resource_tvc2c")

@@ -45,15 +45,15 @@ public partial class Ai : Node2D
 	{
 		var parent = body;
 
-		if (type == Type.Healer && parent is Enemy e && e != mob) {
+		if (type == Type.Healer && parent is Enemy e && e != mob) 
 			currentTarget = body; 
-		}
-		else if (type == Type.Attacker && parent is Hamburg) {
+		else if (type == Type.Attacker && parent is Hamburg) 
 			currentTarget = body; 
-		}
-		else if (type == Type.Rusher && parent is Fridge) {
+		else if (type == Type.Rusher && parent is Fridge) 
 			currentTarget = body; 
-		}
+		if (type != Type.Healer && parent is Statics)
+			currentTarget = body;
+		
 		
 	}
 
@@ -78,6 +78,7 @@ public partial class Ai : Node2D
 	void Act(float dt) {
 		switch (type) {
 			case Type.Rusher:
+				if (IsInstanceValid(holodos)) holodos = null;
 				if (holodos != null)MoveTo(holodos.GlobalPosition);
 				break;
 			case Type.Attacker:

@@ -19,7 +19,7 @@
 [sub_resource type="Resource" id="Resource_521od"]
 script = ExtResource("2_an2w6")
 MaxHp = 100.0
-MaxSpeed = 25.0
+MaxSpeed = 100.0
 MaxShield = 50.0
 metadata/_custom_type_script = "uid://282cvyih62kp"
 
@@ -28,9 +28,10 @@ size = Vector2(53, 25)
 
 [sub_resource type="Resource" id="Resource_sdmle"]
 script = ExtResource("8_nnjgc")
-Damage = 10.0
-Acceleration = 400.0
-LifeTime = 1.0
+Damage = 15.0
+Speed = 10.0
+Acceleration = 500.0
+LifeTime = 0.8
 Pierce = 1.0
 metadata/_custom_type_script = "uid://crcr77siy7s7o"
 
@@ -162,6 +163,7 @@ whereAdd = NodePath("Textiure/Body")
 Head = NodePath("Textiure/HighBulka")
 body = NodePath("Textiure")
 CollectArea = NodePath("Podbor")
+Faction = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917468936]
 position = Vector2(1.5, 2.5)

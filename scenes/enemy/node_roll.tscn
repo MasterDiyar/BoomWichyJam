@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ft2hnhq7re0a"]
+
+[ext_resource type="Script" uid="uid://b834ntyxan7xj" path="res://scripts/enemy/NodeRoll.cs" id="1_ehv0g"]
+
+[node name="NodeRoll" type="Node" unique_id=1698365122]
+script = ExtResource("1_ehv0g")

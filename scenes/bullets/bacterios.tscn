@@ -11,7 +11,9 @@ height = 58.0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=150551673]
 rotation = 1.5707964
+scale = Vector2(0.33, 0.33)
 shape = SubResource("CapsuleShape2D_2lpho")
 
 [node name="Plesnets" type="Sprite2D" parent="." index="1" unique_id=664998475]
+scale = Vector2(0.33, 0.33)
 texture = ExtResource("2_1xr5t")

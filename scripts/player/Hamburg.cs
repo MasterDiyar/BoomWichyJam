@@ -29,6 +29,7 @@ public partial class Hamburg : Entity
 		MaxHp = playerResource.MaxHp;
 		Hp = MaxHp;
 		MaxSpeed = playerResource.MaxSpeed;
+		Speed = MaxSpeed;
 		MaxShield = playerResource.MaxShield;
 		Shield = MaxShield;
 

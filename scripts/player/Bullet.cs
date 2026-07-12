@@ -23,11 +23,14 @@ public partial class Bullet : Area2D
 	private void OnBodyEntered(Node2D body)
 	{
 		if (body == parent) return;
+		
+		if (body is Entity targetEntity)
+			if (parent.Faction == targetEntity.Faction) return;
+		
 		LifeTime -= Pierce;
 		if (body is IDamagable damagable)
-		{
 			damagable.TakeDamage(Damage);
-		}
+		
 	}
 
 	public override void _Process(double delta)

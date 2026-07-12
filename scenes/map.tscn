@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bm4stp1uiixfs" path="res://scenes/player/hamburg.tscn" id="2_paxxb"]
 [ext_resource type="PackedScene" uid="uid://b73vutwvap5np" path="res://scenes/static/stol.tscn" id="3_0cso3"]
 [ext_resource type="PackedScene" uid="uid://bte1gs7dj2qc" path="res://scenes/static/holodos.tscn" id="4_2klcf"]
-[ext_resource type="PackedScene" uid="uid://ent0qqcaumoc" path="res://scenes/enemy/salat.tscn" id="5_2klcf"]
+[ext_resource type="PackedScene" uid="uid://cvrh3ag0tp331" path="res://scenes/enemy/plesen.tscn" id="7_nakos"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lpho"]
 texture = ExtResource("1_2klcf")
@@ -82,5 +82,5 @@ scale = Vector2(2, 2)
 position = Vector2(-1, 381)
 scale = Vector2(2, 2)
 
-[node name="Salat" parent="." unique_id=177023164 instance=ExtResource("5_2klcf")]
-position = Vector2(732, 354)
+[node name="Enemy" parent="." unique_id=1088046675 instance=ExtResource("7_nakos")]
+position = Vector2(374.9317, 641.73596)

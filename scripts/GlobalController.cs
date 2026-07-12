@@ -3,7 +3,7 @@ using System;
 
 public partial class GlobalController : Node
 {
-	public StaticBody2D holodos;
+	public Fridge holodos;
 	[Export] public float MoneyAmplifier = 1;
 	public float Money=1000;
 	

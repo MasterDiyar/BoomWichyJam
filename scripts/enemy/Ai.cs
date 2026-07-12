@@ -16,7 +16,7 @@ public partial class Ai : Node2D
 	
 	private Hamburg player;
 	private Enemy friend;
-	private StaticBody2D holodos;
+	private Fridge holodos;
 	
 	private Node2D currentTarget;
 
@@ -27,6 +27,12 @@ public partial class Ai : Node2D
 		player = GlobalController.Instance.Player;
 		vision.BodyEntered += VisionOnBodyEntered;
 		vision.BodyExited += VisionOnBodyExited;
+		CallDeferred(MethodName.InitHolodos);
+	}
+
+	private void InitHolodos()
+	{
+		holodos = GlobalController.Instance.holodos;
 	}
 
 	private void VisionOnBodyExited(Node2D body)
@@ -45,7 +51,7 @@ public partial class Ai : Node2D
 		else if (type == Type.Attacker && parent is Hamburg) {
 			currentTarget = body; 
 		}
-		else if (type == Type.Rusher && parent is StaticBody2D bd && bd.IsInGroup("holodilnik")) {
+		else if (type == Type.Rusher && parent is Fridge) {
 			currentTarget = body; 
 		}
 		

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c2d18bqph4b31"]
+
+[ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_ackh0"]
+[ext_resource type="Texture2D" uid="uid://1q1aoahy1o63" path="res://assets/enemy/plesnets.png" id="2_1xr5t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2lpho"]
+radius = 7.0
+height = 58.0
+
+[node name="bullet" unique_id=384085446 instance=ExtResource("1_ackh0")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=150551673]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_2lpho")
+
+[node name="Plesnets" type="Sprite2D" parent="." index="1" unique_id=664998475]
+texture = ExtResource("2_1xr5t")

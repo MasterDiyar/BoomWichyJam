@@ -3,7 +3,7 @@ using System;
 
 public partial class Map : Node2D
 {
-	[Export] private StaticBody2D holodos;
+	[Export] private Fridge holodos;
 	public override void _Ready()
 	{
 		GlobalController.Instance.holodos = holodos;

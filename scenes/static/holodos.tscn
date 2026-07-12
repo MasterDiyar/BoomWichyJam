@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bte1gs7dj2qc"]
 
+[ext_resource type="Script" uid="uid://c41lipynjkp62" path="res://scripts/player/Fridge.cs" id="1_3s5nb"]
 [ext_resource type="Texture2D" uid="uid://38euwg4tvudt" path="res://assets/holodilnik.png" id="1_84t86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmle"]
@@ -7,6 +8,7 @@ size = Vector2(56, 106)
 
 [node name="Holodos" type="StaticBody2D" unique_id=1064262322]
 texture_filter = 3
+script = ExtResource("1_3s5nb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1440853057]
 position = Vector2(-1, 8)

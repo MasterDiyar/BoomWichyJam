@@ -2,10 +2,60 @@
 
 [ext_resource type="PackedScene" uid="uid://04s8bvwaxff2" path="res://scenes/enemy/enemy.tscn" id="1_da4s6"]
 [ext_resource type="Texture2D" uid="uid://1wabjl52gqfo" path="res://assets/enemy/plesen.png" id="2_i8hag"]
+[ext_resource type="Script" uid="uid://282cvyih62kp" path="res://scripts/resor/UnitResource.cs" id="2_ra2jx"]
+[ext_resource type="PackedScene" uid="uid://cbvkur2781wh" path="res://scenes/enemy/money.tscn" id="3_60ned"]
+[ext_resource type="PackedScene" uid="uid://dgyplhcxa1i0u" path="res://scenes/enemy/ai.tscn" id="3_rjbvl"]
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="4_3mixa"]
+[ext_resource type="PackedScene" uid="uid://c2d18bqph4b31" path="res://scenes/bullets/bacterios.tscn" id="5_ra2jx"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="6_60ned"]
+
+[sub_resource type="Resource" id="Resource_be0no"]
+script = ExtResource("2_ra2jx")
+MaxHp = 80.0
+MaxSpeed = 100.0
+MaxShield = 1.0
+metadata/_custom_type_script = "uid://282cvyih62kp"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdmle"]
+radius = 15.033297
+
+[sub_resource type="Resource" id="Resource_kvmiy"]
+script = ExtResource("6_60ned")
+Damage = 5.0
+Speed = 300.0
+Acceleration = 1000.0
+LifeTime = 0.2
+Pierce = 1.0
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w3cf5"]
+radius = 27.45906
 
 [node name="Enemy" unique_id=177023164 instance=ExtResource("1_da4s6")]
+Resource = SubResource("Resource_be0no")
+Money = ExtResource("3_60ned")
+MoneyCount = 4
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=2034902037]
+shape = SubResource("CircleShape2D_sdmle")
 
 [node name="Plesen" type="Sprite2D" parent="." index="1" unique_id=2116543100]
 rotation = 1.0384709
+scale = Vector2(0.3, 0.3)
 skew = -0.07853982
 texture = ExtResource("2_i8hag")
+
+[node name="AI" parent="." index="2" unique_id=811088688 node_paths=PackedStringArray("mob", "vision") instance=ExtResource("3_rjbvl")]
+type = 1
+mob = NodePath("..")
+vision = NodePath("../Area2D")
+
+[node name="AttackHandler" parent="." index="3" unique_id=166735263 instance=ExtResource("4_3mixa")]
+bulletScene = ExtResource("5_ra2jx")
+bulletResource = SubResource("Resource_kvmiy")
+AttackSpeed = 3.0
+
+[node name="Area2D" type="Area2D" parent="." index="4" unique_id=1978688745]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=261797722]
+shape = SubResource("CircleShape2D_w3cf5")

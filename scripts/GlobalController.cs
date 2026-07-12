@@ -13,7 +13,10 @@ public partial class GlobalController : Node
 	public float TomatoSeedDamageAmplifier = 1;
 	
 	public Hamburg Player;
-	
+
+	public int Wave = 0;
+
+	public Action<int> WaveStarted;
 	public override void _Ready()
 	{
 		Instance = this;

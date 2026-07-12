@@ -4,8 +4,19 @@ using System;
 public partial class Map : Node2D
 {
 	[Export] private Fridge holodos;
+	[Export] private Timer timer;
+	GlobalController gl;
 	public override void _Ready()
 	{
-		GlobalController.Instance.holodos = holodos;
+		gl = GlobalController.Instance;
+		timer.Timeout += TimerOnTimeout;
+		gl.holodos = holodos;
+		TimerOnTimeout();
+	}
+
+	private void TimerOnTimeout()
+	{
+		gl.Wave++;
+		gl.WaveStarted?.Invoke(gl.Wave);
 	}
 }

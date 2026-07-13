@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c7n0yq1oxpnct"]
+
+[ext_resource type="Script" uid="uid://qrp3inytout2" path="res://scripts/enemy/Enemy.cs" id="1_hfhnj"]
+[ext_resource type="Texture2D" uid="uid://v5764vvq156c" path="res://assets/enemy/salat.png" id="2_2csxs"]
+[ext_resource type="Script" uid="uid://282cvyih62kp" path="res://scripts/resor/UnitResource.cs" id="2_wjtic"]
+[ext_resource type="PackedScene" uid="uid://cbvkur2781wh" path="res://scenes/enemy/money.tscn" id="3_wjidq"]
+[ext_resource type="Script" uid="uid://cdqfvw7t3n1es" path="res://scripts/player/DIeHandler.cs" id="5_eknus"]
+[ext_resource type="PackedScene" uid="uid://lpw246yg08qm" path="res://scenes/enemy/vzriv.tscn" id="6_eknus"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="7_mrs6y"]
+[ext_resource type="PackedScene" uid="uid://dgyplhcxa1i0u" path="res://scenes/enemy/ai.tscn" id="8_mrs6y"]
+
+[sub_resource type="Resource" id="Resource_fshpy"]
+script = ExtResource("2_wjtic")
+MaxHp = 50.0
+MaxSpeed = 200.0
+metadata/_custom_type_script = "uid://282cvyih62kp"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fshpy"]
+
+[sub_resource type="Resource" id="Resource_4jor2"]
+script = ExtResource("7_mrs6y")
+Damage = 50.0
+LifeTime = 0.2
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fshpy"]
+radius = 29.068884
+
+[node name="Kamikaze" type="CharacterBody2D" unique_id=1225670678]
+script = ExtResource("1_hfhnj")
+Resource = SubResource("Resource_fshpy")
+Money = ExtResource("3_wjidq")
+MoneyCount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1325024182]
+shape = SubResource("CapsuleShape2D_fshpy")
+
+[node name="Salat" type="Sprite2D" parent="." unique_id=1468056605]
+modulate = Color(2.5698645, 2.5698645, 2.5698645, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2csxs")
+
+[node name="dieHandler" type="Node2D" parent="." unique_id=532466703]
+script = ExtResource("5_eknus")
+bulletScene = ExtResource("6_eknus")
+bulletResource = SubResource("Resource_4jor2")
+AttackSpeed = 0.0
+
+[node name="AI" parent="." unique_id=811088688 node_paths=PackedStringArray("mob", "vision") instance=ExtResource("8_mrs6y")]
+mob = NodePath("..")
+vision = NodePath("../Area2D")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=459135919]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1335235304]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_fshpy")

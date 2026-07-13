@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dug7un53o4x2i"]
+
+[ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_qorbv"]
+[ext_resource type="Texture2D" uid="uid://c4qsdkibu5osc" path="res://assets/ingridients/Lettuce.png" id="2_mgjyu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kescp"]
+radius = 3.0
+height = 16.0
+
+[sub_resource type="Gradient" id="Gradient_fshpy"]
+colors = PackedColorArray(1, 0.37254903, 0, 1, 1, 1, 1, 1)
+
+[node name="bullet" unique_id=384085446 instance=ExtResource("1_qorbv")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=150551673]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_kescp")
+
+[node name="Lettuce" type="Sprite2D" parent="." index="1" unique_id=95378142]
+modulate = Color(1.8539116, 0.17332418, 1.3368078, 1)
+position = Vector2(2, -1)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_mgjyu")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="2" unique_id=901647427]
+emission_shape = 1
+emission_sphere_radius = 9.8
+direction = Vector2(-10, 0)
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+color = Color(1, 1, 0.20392157, 1)
+color_ramp = SubResource("Gradient_fshpy")

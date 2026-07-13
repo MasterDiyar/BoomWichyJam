@@ -12,20 +12,26 @@ public partial class AttackHandler : Node2D
 	[Export] public float AttackSpeed =1;
 	[Export] public float Offset = 0;
 	[Export] public PackedScene[] Additionals;
-	private float TimeAfterAttack = 0;
-	private bool CanAttack = true;
-	private Entity parent;
+	protected float TimeAfterAttack = 0;
+	protected bool CanAttack = true;
+	protected Entity parent;
 	public override void _Ready()
 	{
 		parent = this.GetFirstParentOfType<Entity>();
 		parent.AttackAction += AttackAction;
 	}
 
-	private void AttackAction(float angle)
+	protected virtual void AttackAction(float angle)
 	{
 		if (!CanAttack) return;
 		CanAttack = false;
 		TimeAfterAttack = AttackSpeed;
+		
+		SpawnBullets(angle);
+	}
+	
+	protected virtual void SpawnBullets(float angle)
+	{
 		for (int i = 0; i < Count; i++) {
 			Bullet bullet = bulletScene.Instantiate<Bullet>();
 			bullet.parent = parent;

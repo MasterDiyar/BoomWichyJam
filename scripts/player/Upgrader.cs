@@ -38,6 +38,8 @@ public partial class Upgrader : Node
 			case What.Cucumber: CucumberUpgrade(obj); break;
 			case What.Lettuce: LettuceUpgrade(obj); break;
 			
+			case What.Bacon: BaconUpgrader(obj); break;
+			
 			
 			case What.Heal: player.TakeDamage(-30); break;
 			case What.RefrigeratorHeal: GlobalController.Instance.holodos.TakeDamage(-60); break;
@@ -102,7 +104,26 @@ public partial class Upgrader : Node
 				break;
 		}
 	}
-	
+
+
+	public void BaconUpgrader(int level)
+	{
+		switch (level)
+		{
+			case 1:
+				var scene = GD.Load<PackedScene>("res://scenes/bullets/baconShooter.tscn");
+				player.AddIngridient(scene, What.Bacon);
+				break;
+			case 2:
+				player.Bacon.ShootCount++;
+				player.Bacon.bulletResource.Randomness += 0.01f;
+				break;
+			case 3:
+				player.Bacon.ShootCount++;
+				player.Bacon.bulletResource.Randomness += 0.04f;
+				break;
+		}
+	}
 	
 	
 }

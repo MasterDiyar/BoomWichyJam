@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c4qsdkibu5osc" path="res://assets/ingridients/Lettuce.png" id="11_n2gxh"]
 [ext_resource type="Texture2D" uid="uid://bgkarckto3wn0" path="res://assets/ingridients/lettuce_swing.png" id="12_3ti2o"]
 [ext_resource type="Texture2D" uid="uid://bvlhaeby5iqsb" path="res://assets/ingridients/heal.png" id="13_3ti2o"]
+[ext_resource type="Texture2D" uid="uid://dtqogvmlhp2fe" path="res://assets/ingridients/high_bulka.png" id="13_fwign"]
 
 [sub_resource type="Resource" id="Resource_grgi1"]
 script = ExtResource("4_1io5f")
@@ -88,6 +89,30 @@ texture = ExtResource("12_3ti2o")
 Name = "шустрый латук"
 Count = 100
 Description = "выаы"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_cbyxe"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("13_fwign")
+Name = "бекон"
+Count = 10
+Description = "ням ням"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_s5tka"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("11_n2gxh")
+Name = "больше"
+Count = 20
+Description = "не халял"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_b1qt6"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("13_fwign")
+Name = "не жирно?"
+Count = 50
+Description = "оч жирно"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_2kncu"]
@@ -168,8 +193,12 @@ upgrades = Array[Object]([SubResource("Resource_vt2r8"), SubResource("Resource_q
 [node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/letuc" unique_id=1376818706 instance=ExtResource("7_1io5f")]
 _what = 2
 
-[node name="UpgradeButton4" parent="TextureRect/MarginContainer/GridContainer" unique_id=1191978042 instance=ExtResource("2_jysym")]
+[node name="bacon" parent="TextureRect/MarginContainer/GridContainer" unique_id=1191978042 instance=ExtResource("2_jysym")]
 layout_mode = 2
+upgrades = Array[Object]([SubResource("Resource_cbyxe"), SubResource("Resource_s5tka"), SubResource("Resource_b1qt6")])
+
+[node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/bacon" unique_id=654041169 instance=ExtResource("7_1io5f")]
+_what = 5
 
 [node name="UpgradeButton5" parent="TextureRect/MarginContainer/GridContainer" unique_id=750487003 instance=ExtResource("2_jysym")]
 layout_mode = 2

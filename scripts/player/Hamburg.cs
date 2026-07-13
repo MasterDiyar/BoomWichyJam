@@ -25,10 +25,10 @@ public partial class Hamburg : Entity
 		Lettuce,
 		Egg,
 		Kotlet,
-		Bacon,
 		Cheese,
 		RedOnion;
 
+	public MultiAttackHandler Bacon;
 
 	public override void _Ready()
 	{
@@ -82,6 +82,13 @@ public partial class Hamburg : Entity
 	public void AddIngridient(PackedScene ingridientScene, Upgrader.What what)
 	{
 		Head.Position += Vector2.Up * 4;
+		if (what == Upgrader.What.Bacon) {
+			var ingridien = ingridientScene.Instantiate<MultiAttackHandler>();
+			ingridien.Position += Vector2.Up * whereAdd.GetChildCount() * 4;
+			Bacon = ingridien;
+			whereAdd.AddChild(ingridien);
+			return;
+		}
 		var ingridient = ingridientScene.Instantiate<AttackHandler>();
 		ingridient.Position += Vector2.Up * whereAdd.GetChildCount() * 4;
 		whereAdd.AddChild(ingridient);
@@ -93,7 +100,6 @@ public partial class Hamburg : Entity
 			case Upgrader.What.Lettuce: Lettuce = ingridient; break;
 			case Upgrader.What.Egg: Egg = ingridient; break;
 			case Upgrader.What.Kotlet: Kotlet = ingridient; break;
-			case Upgrader.What.Bacon: Bacon = ingridient; break;
 			case Upgrader.What.RedOnion: RedOnion = ingridient; break;
 			case Upgrader.What.Cheese: Cheese = ingridient; break;
 		}

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_kdvv8"]
 [ext_resource type="Texture2D" uid="uid://bgkarckto3wn0" path="res://assets/ingridients/lettuce_swing.png" id="2_2kwtk"]
+[ext_resource type="Script" uid="uid://bcwjubw8xqow6" path="res://scripts/bulletThings/PlayAnim.cs" id="3_2kwtk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ckvpb"]
 radius = 33.63
@@ -44,7 +45,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c7e7n")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 10.0
 }]
@@ -56,4 +57,4 @@ shape = SubResource("CircleShape2D_ckvpb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=152049842]
 sprite_frames = SubResource("SpriteFrames_grgi1")
-frame_progress = 0.8736826
+script = ExtResource("3_2kwtk")

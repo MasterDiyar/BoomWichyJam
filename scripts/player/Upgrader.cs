@@ -34,6 +34,8 @@ public partial class Upgrader : Node
 		{
 			case What.Tomato: TomatoUpgrade(obj); break;
 			case What.Cucumber: CucumberUpgrade(obj); break;
+			case What.Lettuce: LettuceUpgrade(obj); break;
+			
 		}
 	}
 
@@ -77,7 +79,24 @@ public partial class Upgrader : Node
 				break;
 		}
 	}
-	
+
+	private void LettuceUpgrade(int level)
+	{
+		switch (level)
+		{
+			case 1:
+				var scene = GD.Load<PackedScene>("res://scenes/bullets/lettucant.tscn");
+				player.AddIngridient(scene, What.Lettuce);
+				break;
+			case 2:
+				player.Lettuce.AttackSpeed = 1;
+				player.Lettuce.DamageModifer = 1.2f;
+				break;
+			case 3:
+				player.Lettuce.AttackSpeed = 0.8f;
+				break;
+		}
+	}
 	
 	
 }

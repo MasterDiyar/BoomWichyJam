@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://du54fp10mbg52" path="res://assets/ingridients/ogurets.png" id="8_vt2r8"]
 [ext_resource type="Texture2D" uid="uid://u8pxa5qm5sch" path="res://assets/ingridients/Cucumber.png" id="9_q64ja"]
 [ext_resource type="Texture2D" uid="uid://l4ljwf3od5kn" path="res://assets/ingridients/sok.png" id="10_n2gxh"]
+[ext_resource type="Texture2D" uid="uid://c4qsdkibu5osc" path="res://assets/ingridients/Lettuce.png" id="11_n2gxh"]
+[ext_resource type="Texture2D" uid="uid://bgkarckto3wn0" path="res://assets/ingridients/lettuce_swing.png" id="12_3ti2o"]
 
 [sub_resource type="Resource" id="Resource_grgi1"]
 script = ExtResource("4_1io5f")
@@ -57,6 +59,34 @@ texture = ExtResource("10_n2gxh")
 Name = "Кислотно"
 Count = 100
 Description = "Кислота"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_vt2r8"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("11_n2gxh")
+Name = "латук"
+Count = 5
+Description = "пока нету"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2gxh"]
+atlas = ExtResource("12_3ti2o")
+region = Rect2(80, 0, 64, 64)
+
+[sub_resource type="Resource" id="Resource_q64ja"]
+script = ExtResource("4_1io5f")
+texture = SubResource("AtlasTexture_n2gxh")
+Name = "быстрый салат"
+Count = 20
+Description = " ы "
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_3ti2o"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("12_3ti2o")
+Name = "шустрый латук"
+Count = 100
+Description = "выаы"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [node name="Holodos" type="Control" unique_id=1192082827 node_paths=PackedStringArray("ExitButton")]
@@ -118,8 +148,12 @@ upgrades = Array[Object]([SubResource("Resource_gnfjy"), SubResource("Resource_m
 [node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/ogurets" unique_id=1443516481 instance=ExtResource("7_1io5f")]
 _what = 1
 
-[node name="UpgradeButton3" parent="TextureRect/MarginContainer/GridContainer" unique_id=1519371132 instance=ExtResource("2_jysym")]
+[node name="letuc" parent="TextureRect/MarginContainer/GridContainer" unique_id=1519371132 instance=ExtResource("2_jysym")]
 layout_mode = 2
+upgrades = Array[Object]([SubResource("Resource_vt2r8"), SubResource("Resource_q64ja"), SubResource("Resource_3ti2o")])
+
+[node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/letuc" unique_id=1376818706 instance=ExtResource("7_1io5f")]
+_what = 2
 
 [node name="UpgradeButton4" parent="TextureRect/MarginContainer/GridContainer" unique_id=1191978042 instance=ExtResource("2_jysym")]
 layout_mode = 2

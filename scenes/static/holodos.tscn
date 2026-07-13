@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c41lipynjkp62" path="res://scripts/player/Fridge.cs" id="1_3s5nb"]
 [ext_resource type="Texture2D" uid="uid://38euwg4tvudt" path="res://assets/holodilnik.png" id="1_84t86"]
+[ext_resource type="Texture2D" uid="uid://hnsl758fqlg" path="res://assets/ui/line.png" id="3_2um5q"]
+[ext_resource type="Texture2D" uid="uid://dfwrvcr35g4xy" path="res://assets/ui/iceline.png" id="4_wblbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmle"]
 size = Vector2(56, 106)
@@ -17,3 +19,17 @@ shape = SubResource("RectangleShape2D_sdmle")
 [node name="Holodilnik" type="Sprite2D" parent="." unique_id=555431548]
 position = Vector2(-1, -1)
 texture = ExtResource("1_84t86")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1008868072]
+offset_left = -65.0
+offset_top = 66.0
+offset_right = 61.0
+offset_bottom = 93.0
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = ExtResource("3_2um5q")
+texture_progress = ExtResource("4_wblbe")

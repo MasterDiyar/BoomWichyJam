@@ -4,8 +4,10 @@ using System;
 public partial class UpgradeButton : Button
 {
 	[Export] public UpgradeResource[] upgrades;
+	[Export] public bool IsInfinite  = false;
 	private int _level =0;
 	public Action<int> OnUpgradeSuccess;
+	
 	public override void _Ready()
 	{
 		Setup(_level);
@@ -13,14 +15,24 @@ public partial class UpgradeButton : Button
 
 	public override void _Pressed()
 	{
-		if (upgrades == null || _level >= upgrades.Length) return;
-		
-		float cost = upgrades[_level].Count;
+		float cost;
+		if (IsInfinite)
+		{
+			cost = upgrades[0].Count;
+			if (!(GlobalController.Instance.Money >= cost)) return;
+			GlobalController.Instance.Money -= cost;
+		}
+		else
+		{
+			if (upgrades == null || _level >= upgrades.Length) return;
 
-		if (!(GlobalController.Instance.Money >= cost)) return;
-		GlobalController.Instance.Money -= cost;
-			
-		_level++;
+			cost = upgrades[_level].Count;
+
+			if (!(GlobalController.Instance.Money >= cost)) return;
+			GlobalController.Instance.Money -= cost;
+
+			_level++;
+		}
 		Setup(_level);
             
 		OnUpgradeSuccess?.Invoke(_level);

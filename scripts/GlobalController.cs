@@ -13,6 +13,7 @@ public partial class GlobalController : Node
 	public float TomatoSeedDamageAmplifier = 1;
 	
 	public Hamburg Player;
+	public Map Mapmap;
 
 	public int Wave = 0;
 

@@ -5,7 +5,7 @@ public partial class Ui : CanvasLayer
 {
 	[Export] private Hamburg parent;
 
-	[Export] private Label MoneyCountLabel;
+	[Export] private Label MoneyCountLabel, TimerLabel;
 	[Export] private ProgressBar HpProgressBar;
 	[Export] private Control Holodos;
 	
@@ -31,6 +31,9 @@ public partial class Ui : CanvasLayer
 	{
 		Holodos.Visible = true;
 	}
-	
-	
+
+	public override void _Process(double delta)
+	{
+		TimerLabel.Text = $"{(int)GlobalController.Instance.Mapmap.timer.TimeLeft}";
+	}
 }

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://clkeao8e7xq8i"]
+
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="1_k8rvg"]
+[ext_resource type="PackedScene" uid="uid://di1x4tel4rejo" path="res://scenes/bullets/lettuswing.tscn" id="2_s74lq"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="3_j3enu"]
+[ext_resource type="Texture2D" uid="uid://c4qsdkibu5osc" path="res://assets/ingridients/Lettuce.png" id="4_cruse"]
+
+[sub_resource type="Resource" id="Resource_hghtl"]
+script = ExtResource("3_j3enu")
+Damage = 60.0
+LifeTime = 0.49
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[node name="AttackHandler" unique_id=166735263 instance=ExtResource("1_k8rvg")]
+texture_filter = 3
+bulletScene = ExtResource("2_s74lq")
+bulletResource = SubResource("Resource_hghtl")
+AttackSpeed = 1.1
+Offset = 50.0
+
+[node name="Lettuce" type="Sprite2D" parent="." index="0" unique_id=965611437]
+rotation = -0.29496065
+texture = ExtResource("4_cruse")

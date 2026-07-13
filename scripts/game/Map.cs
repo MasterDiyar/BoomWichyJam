@@ -5,7 +5,7 @@ public partial class Map : Node2D
 {
 	[Export] private Fridge holodos;
 	[Export] public Timer timer;
-	[Export] AudioStreamPlayer2D audio;
+	[Export] public AudioStreamPlayer2D audio;
 	GlobalController gl;
 	public override void _Ready()
 	{
@@ -18,11 +18,14 @@ public partial class Map : Node2D
 		TimerOnTimeout();
 		
 		audio.Play();
+		GlobalController.Instance.OnLose += audio.Stop;
+		GlobalController.Instance.OnWin +=  audio.Stop;
 	}
 
 	private void TimerOnTimeout()
 	{
 		gl.Wave++;
+		if (gl.Wave == 7) timer.Timeout -= TimerOnTimeout;
 		gl.WaveStarted?.Invoke(gl.Wave);
 	}
 }

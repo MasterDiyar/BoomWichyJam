@@ -265,12 +265,13 @@ bulletScene = ExtResource("7_nd160")
 bulletResource = SubResource("Resource_5q4wy")
 AttackSpeed = 4.0
 
-[node name="Node2D" type="Node2D" parent="." index="4" unique_id=1123393439 node_paths=PackedStringArray("mob", "vision", "Body", "animPlayer")]
+[node name="Node2D" type="Node2D" parent="." index="4" unique_id=1123393439 node_paths=PackedStringArray("mob", "vision", "Body", "animPlayer", "audioPlayer")]
 script = ExtResource("8_nd160")
 mob = NodePath("..")
 vision = NodePath("../Area2D")
 Body = NodePath("../Body")
 animPlayer = NodePath("../Body/AnimationPlayer")
+audioPlayer = NodePath("../AudioStreamPlayer2D")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="5" unique_id=1024897641]
 stream = ExtResource("9_ry71l")

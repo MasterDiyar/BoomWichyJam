@@ -46,9 +46,16 @@ public partial class Hamburg : Entity
 		CollectArea.BodyEntered += Find;
 		CollectArea.BodyExited += UnFind;
 
-		GlobalController.Instance.OnLose += () => { audio.Stream = loose; audio.Play(); };
-		
+		GlobalController.Instance.OnLose += GA;
+
 	}
+
+	void GA()
+		{ 
+			audio.Stream = loose; audio.Play();
+			GlobalController.Instance.OnLose -= GA;
+		}
+	
 
 
 	public override void _PhysicsProcess(double delta)

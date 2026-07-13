@@ -7,12 +7,15 @@ public partial class AiBoss : Node2D
     [Export] public Area2D vision;
     [Export] public Node2D Body; 
     [Export] public AnimationPlayer animPlayer; 
+    [Export] public AudioStreamPlayer2D audioPlayer;
     
     private Hamburg player;
     private bool canAttack = false;
 
     public override void _Ready()
     {
+        audioPlayer.Play();
+        GlobalController.Instance.Mapmap.audio.Stop();
         player = GlobalController.Instance.Player;
         
         if (vision != null)
@@ -64,6 +67,6 @@ public partial class AiBoss : Node2D
 
     public override void _ExitTree()
     {
-        GlobalController.Instance.OnWin.Invoke();
+        GlobalController.Instance.OnWin?.Invoke();
     }
 }

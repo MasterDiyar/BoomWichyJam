@@ -11,6 +11,7 @@ public partial class Fridge : StaticBody2D, IDamagable
 
 	public void TakeDamage(float damage)
 	{
+		GD.Print(Hp);
 		Hp -= damage;
 		bar.MaxValue = MaxHp;
 		bar.Value = (int)Hp;

@@ -10,6 +10,8 @@ public partial class Hamburg : Entity
 	[Export] public AnimationPlayer animationPlayer;
 	[Export] public Node2D whereAdd, Head, body;
 	[Export] public Area2D CollectArea;
+	[Export] public AudioStreamPlayer2D audio;
+	[Export] public AudioStream loose;
 
 	public Action MoneyChanged, HpChanged, OpenHolodilnik;
 
@@ -43,6 +45,9 @@ public partial class Hamburg : Entity
 		CollectArea.AreaEntered += Collect;
 		CollectArea.BodyEntered += Find;
 		CollectArea.BodyExited += UnFind;
+
+		GlobalController.Instance.OnLose += () => { audio.Stream = loose; audio.Play(); };
+		
 	}
 
 
@@ -121,8 +126,7 @@ public partial class Hamburg : Entity
 
 	void OnLoose()
 	{
-
-
+		GlobalController.Instance.OnLose.Invoke();
 	}
 
 	void Collect(Area2D area)

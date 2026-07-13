@@ -61,4 +61,9 @@ public partial class AiBoss : Node2D
             mob.AttackAction?.Invoke(angle);
         }
     }
+
+    public override void _ExitTree()
+    {
+        GlobalController.Instance.OnWin.Invoke();
+    }
 }

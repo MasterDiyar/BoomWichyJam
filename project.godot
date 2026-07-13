@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="BoomWichi"
+config/name="SandWitchMadness"
+config/version="1.0.0"
+run/main_scene="uid://b85vmjpx5mb6c"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cxcwx8j80gqgl"
 
 [autoload]
 

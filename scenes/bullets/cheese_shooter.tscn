@@ -9,6 +9,7 @@
 script = ExtResource("3_mpg6p")
 Damage = -30.0
 LifeTime = 5.0
+Pierce = 5.0
 Randomness = 6.28
 metadata/_custom_type_script = "uid://crcr77siy7s7o"
 

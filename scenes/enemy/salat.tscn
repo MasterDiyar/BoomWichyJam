@@ -24,11 +24,11 @@ radius = 247.77812
 
 [sub_resource type="Resource" id="Resource_ss107"]
 script = ExtResource("9_4hw6p")
-Damage = 15.0
-Speed = 90.0
+Damage = 10.0
+Speed = 80.0
 Acceleration = 40.0
 LifeTime = 2.5
-Pierce = 0.1
+Pierce = 2.5
 metadata/_custom_type_script = "uid://crcr77siy7s7o"
 
 [node name="Salat" unique_id=177023164 instance=ExtResource("1_u3f2a")]

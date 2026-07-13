@@ -7,7 +7,8 @@ public partial class Ui : CanvasLayer
 
 	[Export] private Label MoneyCountLabel, TimerLabel;
 	[Export] private ProgressBar HpProgressBar;
-	[Export] private Control Holodos;
+	[Export] private Control Holodos, Loose, Win;
+	[Export] Button winButton, loseButton;
 	
 	public override void _Ready()
 	{
@@ -15,6 +16,19 @@ public partial class Ui : CanvasLayer
 		parent.HpChanged += HpChanged;
 		parent.OpenHolodilnik += OpenFridge;
 		HpProgressBar.MaxValue = parent.MaxHp;
+
+		GlobalController.Instance.OnLose += () => Loose.Visible = true;
+		GlobalController.Instance.OnWin += () => Win.Visible = true;
+		
+		winButton.Pressed += WinButtonOnPressed;
+		loseButton.Pressed += WinButtonOnPressed;
+	}
+
+	private void WinButtonOnPressed()
+	{
+		GlobalController.Instance.Mapmap.GetParent().AddChild(GD.Load<PackedScene>("res://scenes/menu.tscn").Instantiate());
+		GlobalController.Instance.Mapmap.QueueFree();
+		GlobalController.Instance.Reload();
 	}
 
 	private void HpChanged()

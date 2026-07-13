@@ -5,6 +5,7 @@ public partial class Map : Node2D
 {
 	[Export] private Fridge holodos;
 	[Export] public Timer timer;
+	[Export] AudioStreamPlayer2D audio;
 	GlobalController gl;
 	public override void _Ready()
 	{
@@ -15,6 +16,8 @@ public partial class Map : Node2D
 		timer.Timeout += TimerOnTimeout;
 		gl.holodos = holodos;
 		TimerOnTimeout();
+		
+		audio.Play();
 	}
 
 	private void TimerOnTimeout()

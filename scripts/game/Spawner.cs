@@ -14,7 +14,7 @@ public partial class Spawner : Node2D
 	private void WaveStarted(int num)
 	{
 		var obj = num - 1;
-		if (obj > Waves.Length ) obj = Waves.Length - 1;
+		if (obj >= Waves.Length ) obj = Waves.Length - 1;
 		
 		if (Waves[obj].Units == null) return;
 		foreach (var res in Waves[obj].Units)
@@ -27,5 +27,11 @@ public partial class Spawner : Node2D
 			}
 		}
 	}
-
+	public override void _ExitTree()
+	{
+		if (GlobalController.Instance != null)
+		{
+			GlobalController.Instance.WaveStarted -= WaveStarted;
+		}
+	}
 }

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://lpw246yg08qm"]
 
 [ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_3prtn"]
-[ext_resource type="Texture2D" uid="uid://d3qcrt7bpr2eg" path="res://assets/enemy/plesenwait.png" id="2_ijama"]
+[ext_resource type="Texture2D" uid="uid://dsmssekic5fjj" path="res://assets/enemy/cussiaBOoom.png" id="2_3prtn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjwof"]
-radius = 122.33152
+radius = 99.12618
 
 [node name="Vzriv" unique_id=384085446 instance=ExtResource("1_3prtn")]
 
@@ -12,5 +12,5 @@ radius = 122.33152
 shape = SubResource("CircleShape2D_sjwof")
 
 [node name="Plesenwait" type="Sprite2D" parent="." index="1" unique_id=1392809456]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_ijama")
+position = Vector2(-6, -10)
+texture = ExtResource("2_3prtn")

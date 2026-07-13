@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c7n0yq1oxpnct"]
 
 [ext_resource type="Script" uid="uid://qrp3inytout2" path="res://scripts/enemy/Enemy.cs" id="1_hfhnj"]
-[ext_resource type="Texture2D" uid="uid://v5764vvq156c" path="res://assets/enemy/salat.png" id="2_2csxs"]
 [ext_resource type="Script" uid="uid://282cvyih62kp" path="res://scripts/resor/UnitResource.cs" id="2_wjtic"]
 [ext_resource type="PackedScene" uid="uid://cbvkur2781wh" path="res://scenes/enemy/money.tscn" id="3_wjidq"]
+[ext_resource type="Texture2D" uid="uid://buuhixotx0wuy" path="res://assets/enemy/cussia.png" id="4_mrs6y"]
 [ext_resource type="Script" uid="uid://cdqfvw7t3n1es" path="res://scripts/player/DIeHandler.cs" id="5_eknus"]
 [ext_resource type="PackedScene" uid="uid://lpw246yg08qm" path="res://scenes/enemy/vzriv.tscn" id="6_eknus"]
 [ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="7_mrs6y"]
@@ -11,8 +11,8 @@
 
 [sub_resource type="Resource" id="Resource_fshpy"]
 script = ExtResource("2_wjtic")
-MaxHp = 50.0
-MaxSpeed = 200.0
+MaxHp = 40.0
+MaxSpeed = 150.0
 metadata/_custom_type_script = "uid://282cvyih62kp"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fshpy"]
@@ -36,9 +36,8 @@ MoneyCount = 20
 shape = SubResource("CapsuleShape2D_fshpy")
 
 [node name="Salat" type="Sprite2D" parent="." unique_id=1468056605]
-modulate = Color(2.5698645, 2.5698645, 2.5698645, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_2csxs")
+texture_filter = 3
+texture = ExtResource("4_mrs6y")
 
 [node name="dieHandler" type="Node2D" parent="." unique_id=532466703]
 script = ExtResource("5_eknus")
@@ -53,5 +52,5 @@ vision = NodePath("../Area2D")
 [node name="Area2D" type="Area2D" parent="." unique_id=459135919]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1335235304]
-position = Vector2(0, 4)
+position = Vector2(4, 1)
 shape = SubResource("CircleShape2D_fshpy")

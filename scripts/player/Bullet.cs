@@ -20,13 +20,14 @@ public partial class Bullet : Area2D
 		BodyEntered += OnBodyEntered;
 	}
 
-	private void OnBodyEntered(Node2D body)
+	protected virtual void OnBodyEntered(Node2D body)
 	{
 		if (body == parent) return;
 		
 		if (body is Entity targetEntity)
 			if (parent.Faction == targetEntity.Faction) return;
 		
+		if (parent.Faction ==1 && body is Fridge) return;
 		LifeTime -= Pierce;
 		if (body is IDamagable damagable)
 			damagable.TakeDamage(Damage);

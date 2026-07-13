@@ -4,7 +4,7 @@ using System;
 public partial class GlobalController : Node
 {
 	public Fridge holodos;
-	[Export] public float MoneyAmplifier = 1;
+	public float MoneyAmplifier = 1;
 	public float Money=1000;
 	
 	public static GlobalController Instance;
@@ -23,11 +23,33 @@ public partial class GlobalController : Node
 	public Action<int> WaveStarted;
 	
 	public int TrumpCount = 0;
-	
-	
+
+	public Action OnWin;
+	public Action OnLose;
 	
 	public override void _Ready()
 	{
 		Instance = this;
+	}
+	
+	public void Reload()
+	{
+		Money = 0;
+		MoneyAmplifier = 1;
+    
+		TomatoSeedCount = 6;
+		TomatoSeedDamageAmplifier = 1;
+    
+		Wave = 0;
+		BacteriaCount = 0;
+		TrumpCount = 0;
+		
+		holodos = null;
+		Player = null;
+		Mapmap = null;
+    
+		WaveStarted = null;
+		OnWin = null;
+		OnLose = null;
 	}
 }

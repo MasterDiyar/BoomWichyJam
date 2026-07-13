@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cftlf8g2dtca1" path="res://scenes/enemy/bacteria.tscn" id="10_mlgqr"]
 [ext_resource type="Script" uid="uid://cklen35vhpm66" path="res://scripts/resor/WaveResource.cs" id="10_wslke"]
 [ext_resource type="PackedScene" uid="uid://c7n0yq1oxpnct" path="res://scenes/enemy/kamikaze.tscn" id="12_wslke"]
+[ext_resource type="PackedScene" uid="uid://iq8qsg0qlsrg" path="res://scenes/enemy/trump.tscn" id="13_gw3fx"]
+[ext_resource type="AudioStream" uid="uid://e7c8gny1ys0i" path="res://assets/sounds/MAIN.mp3" id="14_n1psn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lpho"]
 texture = ExtResource("1_2klcf")
@@ -34,22 +36,13 @@ size = Vector2(20, 1026)
 [sub_resource type="Resource" id="Resource_xydd0"]
 script = ExtResource("8_mlgqr")
 Unit = ExtResource("7_nakos")
-metadata/_custom_type_script = "uid://duur4y33byp2e"
-
-[sub_resource type="Resource" id="Resource_p1dyn"]
-script = ExtResource("8_mlgqr")
-Unit = ExtResource("5_2klcf")
-SpawnOffset = 40.0
-metadata/_custom_type_script = "uid://duur4y33byp2e"
-
-[sub_resource type="Resource" id="Resource_wslke"]
-script = ExtResource("8_mlgqr")
-Unit = ExtResource("10_mlgqr")
+Count = 2
+SpawnOffset = 50.0
 metadata/_custom_type_script = "uid://duur4y33byp2e"
 
 [sub_resource type="Resource" id="Resource_xeolc"]
 script = ExtResource("10_wslke")
-Units = Array[Object]([SubResource("Resource_xydd0"), SubResource("Resource_p1dyn"), SubResource("Resource_wslke")])
+Units = Array[Object]([SubResource("Resource_xydd0")])
 metadata/_custom_type_script = "uid://cklen35vhpm66"
 
 [sub_resource type="Resource" id="Resource_c4q3t"]
@@ -64,14 +57,148 @@ script = ExtResource("10_wslke")
 Units = Array[Object]([SubResource("Resource_c4q3t")])
 metadata/_custom_type_script = "uid://cklen35vhpm66"
 
-[node name="map" type="Node2D" unique_id=1838604639 node_paths=PackedStringArray("holodos", "timer")]
+[sub_resource type="Resource" id="Resource_s3jtv"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("12_wslke")
+Count = 2
+SpawnOffset = 90.0
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_vkt1i"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("7_nakos")
+Count = 2
+SpawnOffset = 40.0
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_1yvuf"]
+script = ExtResource("10_wslke")
+Units = Array[Object]([SubResource("Resource_s3jtv"), SubResource("Resource_vkt1i")])
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[sub_resource type="Resource" id="Resource_afswt"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("12_wslke")
+Count = 3
+SpawnOffset = 120.0
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_7nwtg"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("10_mlgqr")
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_mpg6p"]
+script = ExtResource("10_wslke")
+Units = Array[Object]([SubResource("Resource_afswt"), SubResource("Resource_7nwtg")])
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[sub_resource type="Resource" id="Resource_jhm5u"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("5_2klcf")
+Count = 3
+SpawnOffset = 100.0
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_bwwc2"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("7_nakos")
+Count = 8
+SpawnOffset = 30.0
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_gixqm"]
+script = ExtResource("10_wslke")
+Units = Array[Object]([SubResource("Resource_jhm5u"), SubResource("Resource_bwwc2")])
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[sub_resource type="Resource" id="Resource_gstaq"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("10_mlgqr")
+Count = 2
+SpawnOffset = 30.0
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_jmg24"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("5_2klcf")
+Count = 5
+SpawnOffset = 120.0
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_2jsmm"]
+script = ExtResource("10_wslke")
+Units = Array[Object]([SubResource("Resource_gstaq"), SubResource("Resource_jmg24")])
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[sub_resource type="Resource" id="Resource_n1psn"]
+script = ExtResource("10_wslke")
+Units = null
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[sub_resource type="Resource" id="Resource_4b7dj"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("7_nakos")
+Count = 4
+SpawnOffset = 40.0
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_gw3fx"]
+script = ExtResource("10_wslke")
+Units = Array[Object]([SubResource("Resource_4b7dj")])
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[sub_resource type="Resource" id="Resource_sq6bu"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("10_mlgqr")
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_2cfcp"]
+script = ExtResource("10_wslke")
+Units = Array[Object]([SubResource("Resource_sq6bu")])
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[sub_resource type="Resource" id="Resource_c00ee"]
+script = ExtResource("10_wslke")
+Units = null
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[sub_resource type="Resource" id="Resource_m335s"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("5_2klcf")
+Count = 2
+SpawnOffset = 80.0
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_p7tei"]
+script = ExtResource("10_wslke")
+Units = Array[Object]([SubResource("Resource_m335s")])
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[sub_resource type="Resource" id="Resource_c70he"]
+script = ExtResource("10_wslke")
+Units = null
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[sub_resource type="Resource" id="Resource_6k6j1"]
+script = ExtResource("8_mlgqr")
+Unit = ExtResource("13_gw3fx")
+metadata/_custom_type_script = "uid://duur4y33byp2e"
+
+[sub_resource type="Resource" id="Resource_mo32q"]
+script = ExtResource("10_wslke")
+Units = Array[Object]([SubResource("Resource_6k6j1")])
+metadata/_custom_type_script = "uid://cklen35vhpm66"
+
+[node name="map" type="Node2D" unique_id=1838604639 node_paths=PackedStringArray("holodos", "timer", "audio")]
 texture_filter = 3
 script = ExtResource("1_nakos")
 holodos = NodePath("StaticBody2D2")
 timer = NodePath("WaveTimer")
+audio = NodePath("AudioStreamPlayer2D")
 
 [node name="WaveTimer" type="Timer" parent="." unique_id=1840092514]
-wait_time = 60.0
+wait_time = 30.0
 autostart = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=697346201]
@@ -163,6 +290,12 @@ scale = Vector2(2, 2)
 
 [node name="Spawner" parent="." unique_id=1177866386 instance=ExtResource("6_blm8a")]
 position = Vector2(1660, 811)
-Waves = Array[Object]([SubResource("Resource_xeolc"), SubResource("Resource_vnvjf")])
+Waves = Array[Object]([SubResource("Resource_xeolc"), SubResource("Resource_vnvjf"), SubResource("Resource_1yvuf"), SubResource("Resource_mpg6p"), SubResource("Resource_gixqm"), SubResource("Resource_2jsmm")])
 
-[node name="Kamikaze" parent="." unique_id=1225670678 instance=ExtResource("12_wslke")]
+[node name="Spawner2" parent="." unique_id=1988690636 instance=ExtResource("6_blm8a")]
+position = Vector2(1649.6871, 182.09872)
+Waves = Array[Object]([SubResource("Resource_n1psn"), SubResource("Resource_gw3fx"), SubResource("Resource_2cfcp"), SubResource("Resource_c00ee"), SubResource("Resource_p7tei"), SubResource("Resource_c70he"), SubResource("Resource_mo32q")])
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=189083588]
+stream = ExtResource("14_n1psn")
+volume_db = -9.826

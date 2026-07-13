@@ -34,3 +34,10 @@ stretch_margin_right = 1
 stretch_margin_bottom = 1
 texture_under = ExtResource("3_2um5q")
 texture_progress = ExtResource("4_wblbe")
+
+[node name="Label" type="Label" parent="." unique_id=972948528]
+offset_left = -22.0
+offset_top = -30.0
+offset_right = 18.0
+offset_bottom = -7.0
+text = "    E"

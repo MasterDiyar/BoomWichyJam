@@ -4,9 +4,10 @@ using Godot;
 namespace BoomWichi.scripts.player;
 public partial class CheeseBullet : Bullet
 {
-    private void OnBodyEntered(Node2D body)
+    protected override void OnBodyEntered(Node2D body)
     {
-        if (body is IDamagable damagable)
-            damagable.TakeDamage(Damage);
+        if (body is not IDamagable damagable) return;
+        damagable.TakeDamage(Damage);
+        QueueFree();
     }
 }

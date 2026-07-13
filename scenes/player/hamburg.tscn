@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://dtbe5ur0noggs" path="res://scripts/player/Ui.cs" id="12_e6na4"]
 [ext_resource type="Texture2D" uid="uid://clto3ohnmh20q" path="res://assets/ingridients/hp.png" id="14_1dn68"]
 [ext_resource type="PackedScene" uid="uid://dl4xui08m6ef6" path="res://scenes/player/holodos.tscn" id="15_c6m37"]
+[ext_resource type="AudioStream" uid="uid://bdmmik2xkupcs" path="res://assets/sounds/DEATH2.mp3" id="16_vpncu"]
 
 [sub_resource type="Resource" id="Resource_521od"]
 script = ExtResource("2_an2w6")
@@ -27,9 +28,9 @@ size = Vector2(53, 25)
 
 [sub_resource type="Resource" id="Resource_sdmle"]
 script = ExtResource("8_nnjgc")
-Damage = 15.0
-Speed = 10.0
-Acceleration = 500.0
+Damage = 16.0
+Speed = 100.0
+Acceleration = 450.0
 LifeTime = 0.8
 Pierce = 1.0
 metadata/_custom_type_script = "uid://crcr77siy7s7o"
@@ -158,7 +159,13 @@ font_size = 48
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Hamburg" type="CharacterBody2D" unique_id=959921502 node_paths=PackedStringArray("animationPlayer", "whereAdd", "Head", "body", "CollectArea")]
+[sub_resource type="LabelSettings" id="LabelSettings_grgi1"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ckvpb"]
+font_size = 48
+
+[node name="Hamburg" type="CharacterBody2D" unique_id=959921502 node_paths=PackedStringArray("animationPlayer", "whereAdd", "Head", "body", "CollectArea", "audio")]
 texture_filter = 3
 script = ExtResource("1_wid6y")
 playerResource = SubResource("Resource_521od")
@@ -167,6 +174,8 @@ whereAdd = NodePath("Textiure/Body")
 Head = NodePath("Textiure/HighBulka")
 body = NodePath("Textiure")
 CollectArea = NodePath("Podbor")
+audio = NodePath("AudioStreamPlayer2D")
+loose = ExtResource("16_vpncu")
 Faction = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917468936]
@@ -223,13 +232,17 @@ scene = ExtResource("11_ecywh")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Podbor" unique_id=37060148]
 shape = SubResource("CircleShape2D_sdmle")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=2101591385 node_paths=PackedStringArray("parent", "MoneyCountLabel", "TimerLabel", "HpProgressBar", "Holodos")]
+[node name="UI" type="CanvasLayer" parent="." unique_id=2101591385 node_paths=PackedStringArray("parent", "MoneyCountLabel", "TimerLabel", "HpProgressBar", "Holodos", "Loose", "Win", "winButton", "loseButton")]
 script = ExtResource("12_e6na4")
 parent = NodePath("..")
 MoneyCountLabel = NodePath("Control/Money")
 TimerLabel = NodePath("Control/Label")
 HpProgressBar = NodePath("Control/ProgressBar")
 Holodos = NodePath("Holodos")
+Loose = NodePath("Loose")
+Win = NodePath("Win")
+winButton = NodePath("Win/ColorRect/Button")
+loseButton = NodePath("Loose/ColorRect2/Button")
 
 [node name="Control" type="Control" parent="UI" unique_id=1479781073]
 texture_filter = 3
@@ -254,7 +267,7 @@ offset_left = 59.0
 offset_top = 87.0
 offset_right = 183.0
 offset_bottom = 132.0
-text = " X 10"
+text = " X 0"
 label_settings = SubResource("LabelSettings_sdmle")
 
 [node name="TextureRect2" type="TextureRect" parent="UI/Control" unique_id=119463757]
@@ -292,3 +305,83 @@ offset_left = 967.0
 offset_top = 532.0
 offset_right = -953.0
 offset_bottom = -548.0
+
+[node name="Win" type="Control" parent="UI" unique_id=1692305404]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/Win" unique_id=1519359714]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 182.0
+offset_right = 1609.0538
+offset_bottom = 894.22424
+color = Color(0.36078432, 0.36078432, 0.36078432, 0.8666667)
+
+[node name="Button" type="Button" parent="UI/Win/ColorRect" unique_id=977687570]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 574.0
+offset_right = 1181.1307
+offset_bottom = 678.44653
+text = "Malades"
+
+[node name="Label" type="Label" parent="UI/Win/ColorRect" unique_id=884389381]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 74.0
+offset_right = 776.0
+offset_bottom = 305.0
+text = "Спасибо за то что прошли мою игру! 
+
+
+
+
+
+
+
+
+
+
+
+ы"
+label_settings = SubResource("LabelSettings_grgi1")
+
+[node name="Loose" type="Control" parent="UI" unique_id=743483774]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Loose" unique_id=213567422]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 182.0
+offset_right = 1609.0538
+offset_bottom = 894.22424
+color = Color(0.16862746, 0.16862746, 0.16862746, 0.72156864)
+
+[node name="Label" type="Label" parent="UI/Loose/ColorRect2" unique_id=1315814672]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 38.0
+offset_right = 790.0
+offset_bottom = 235.0
+text = "Попробуй еще раз :)"
+label_settings = SubResource("LabelSettings_ckvpb")
+
+[node name="Button" type="Button" parent="UI/Loose/ColorRect2" unique_id=1203587242]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 630.0
+offset_right = 859.0
+offset_bottom = 705.0
+theme_override_font_sizes/font_size = 48
+text = "GOGOGOOGO"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=329449473]
+stream = ExtResource("16_vpncu")

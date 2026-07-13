@@ -82,6 +82,7 @@ public partial class Ai : Node2D
 				if (holodos != null)MoveTo(holodos.GlobalPosition);
 				break;
 			case Type.Attacker:
+				if (!IsInstanceValid(player)) player = null;
 				if (player != null)MoveTo(player.GlobalPosition);
 				break;
 			case Type.Healer:

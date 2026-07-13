@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cdp3yya52jocy"]
 
+[ext_resource type="Script" uid="uid://b5mc4ckas70eo" path="res://scripts/player/CheeseBullet.cs" id="1_1tyf3"]
 [ext_resource type="Texture2D" uid="uid://bw183gj4cm2" path="res://assets/ingridients/CHEESE.png" id="1_h8mby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmle"]
 size = Vector2(45.75935, 28.864086)
 
 [node name="HealChees" type="Area2D" unique_id=1734936664]
+script = ExtResource("1_1tyf3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2019915987]
 position = Vector2(3.9576197, 2.6878643)

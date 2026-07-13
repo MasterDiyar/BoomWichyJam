@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cwu2clne8pisf" path="res://scenes/bullets/flagioth.tscn" id="7_nd160"]
 [ext_resource type="Script" uid="uid://by100sg868tur" path="res://scripts/enemy/AiBoss.cs" id="8_nd160"]
 [ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="8_ry71l"]
+[ext_resource type="AudioStream" uid="uid://bu0f2furp7gye" path="res://assets/sounds/BOOSS.mp3" id="9_ry71l"]
 
 [sub_resource type="Resource" id="Resource_50yxr"]
 script = ExtResource("2_dxy7y")
@@ -195,7 +196,6 @@ Money = ExtResource("3_840jc")
 MoneyCount = 10
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=2034902037]
-visible = false
 position = Vector2(0, 18)
 shape = SubResource("CapsuleShape2D_vpncu")
 
@@ -256,7 +256,6 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_840jc")
 
 [node name="Area2D" type="Area2D" parent="." index="2" unique_id=1048172426]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=2032016101]
 shape = SubResource("CircleShape2D_grgi1")
@@ -272,3 +271,7 @@ mob = NodePath("..")
 vision = NodePath("../Area2D")
 Body = NodePath("../Body")
 animPlayer = NodePath("../Body/AnimationPlayer")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="5" unique_id=1024897641]
+stream = ExtResource("9_ry71l")
+max_distance = 8192.0

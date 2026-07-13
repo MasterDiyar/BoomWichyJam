@@ -16,7 +16,7 @@ public partial class Fridge : StaticBody2D, IDamagable
 		bar.Value = (int)Hp;
 		if (Hp <= 0)
 		{
-			QueueFree();
+			GlobalController.Instance.OnLose.Invoke();
 		}
 		
 	}

@@ -39,7 +39,7 @@ public partial class Upgrader : Node
 			case What.Lettuce: LettuceUpgrade(obj); break;
 			
 			case What.Bacon: BaconUpgrader(obj); break;
-			
+			case What.RedOnion: OnionGrader(obj); break;
 			
 			case What.Heal: player.TakeDamage(-30); break;
 			case What.RefrigeratorHeal: GlobalController.Instance.holodos.TakeDamage(-60); break;
@@ -124,6 +124,35 @@ public partial class Upgrader : Node
 				break;
 		}
 	}
-	
+
+	public void OnionGrader(int level)
+	{
+		switch (level)
+		{
+			case 1:
+				player.MaxSpeed += 20;
+				break;
+			case 2:
+				player.MaxSpeed += 30;
+				break;
+			case 3:
+				player.MaxSpeed += 40;
+				break;
+		}
+	}
+
+	public void EggUpgrade(int level)
+	{
+		switch (level)
+		{
+			case 1:
+				var scene = GD.Load<PackedScene>("res://scenes/bullets/eggshoot.tscn");
+				player.AddIngridient(scene, What.Egg);
+				break;
+			case 2:
+				player.Egg.Count += 2;
+				break;
+		}
+	}
 	
 }

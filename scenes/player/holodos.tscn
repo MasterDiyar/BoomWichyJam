@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bgkarckto3wn0" path="res://assets/ingridients/lettuce_swing.png" id="12_3ti2o"]
 [ext_resource type="Texture2D" uid="uid://bvlhaeby5iqsb" path="res://assets/ingridients/heal.png" id="13_3ti2o"]
 [ext_resource type="Texture2D" uid="uid://dtqogvmlhp2fe" path="res://assets/ingridients/high_bulka.png" id="13_fwign"]
+[ext_resource type="Texture2D" uid="uid://cg7s3ma3868uj" path="res://assets/enemy/bacter/b3.png" id="15_u5p87"]
 
 [sub_resource type="Resource" id="Resource_grgi1"]
 script = ExtResource("4_1io5f")
@@ -115,6 +116,30 @@ Count = 50
 Description = "оч жирно"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
+[sub_resource type="Resource" id="Resource_mgjyu"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("13_3ti2o")
+Name = "onion"
+Count = 10
+Description = "Чем острее тем быстрее"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_fwign"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("13_fwign")
+Name = "onion2"
+Count = 15
+Description = "ja skorost"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_u5p87"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("15_u5p87")
+Name = "onion???"
+Count = 25
+Description = "men zhel"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
 [sub_resource type="Resource" id="Resource_2kncu"]
 script = ExtResource("4_1io5f")
 texture = ExtResource("13_3ti2o")
@@ -212,8 +237,12 @@ layout_mode = 2
 [node name="UpgradeButton8" parent="TextureRect/MarginContainer/GridContainer" unique_id=801243753 instance=ExtResource("2_jysym")]
 layout_mode = 2
 
-[node name="UpgradeButton9" parent="TextureRect/MarginContainer/GridContainer" unique_id=653391829 instance=ExtResource("2_jysym")]
+[node name="onion" parent="TextureRect/MarginContainer/GridContainer" unique_id=653391829 instance=ExtResource("2_jysym")]
 layout_mode = 2
+upgrades = Array[Object]([SubResource("Resource_mgjyu"), SubResource("Resource_fwign"), SubResource("Resource_u5p87")])
+
+[node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/onion" unique_id=1418653895 instance=ExtResource("7_1io5f")]
+_what = 7
 
 [node name="UpgradeButton10" parent="TextureRect/MarginContainer/GridContainer" unique_id=1475708613 instance=ExtResource("2_jysym")]
 layout_mode = 2

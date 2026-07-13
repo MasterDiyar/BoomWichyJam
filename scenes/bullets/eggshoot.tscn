@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c05ljmlyb5w0e"]
+
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="1_wetkx"]
+[ext_resource type="Texture2D" uid="uid://3mcbgfq8eerj" path="res://assets/ingridients/pomidor.png" id="2_34hjl"]
+
+[node name="AttackHandler" unique_id=166735263 instance=ExtResource("1_wetkx")]
+
+[node name="Pomidor" type="Sprite2D" parent="." index="0" unique_id=152359141]
+modulate = Color(6.9192305, 6.9192305, 6.9192305, 1)
+texture = ExtResource("2_34hjl")

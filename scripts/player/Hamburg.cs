@@ -93,22 +93,20 @@ public partial class Hamburg : Entity
 		ingridient.Position += Vector2.Up * whereAdd.GetChildCount() * 4;
 		whereAdd.AddChild(ingridient);
 
-		switch (what)
-		{
+		switch (what) {
 			case Upgrader.What.Tomato: Pomidor = ingridient; break;
 			case Upgrader.What.Cucumber: Cucumber = ingridient; break;
 			case Upgrader.What.Lettuce: Lettuce = ingridient; break;
 			case Upgrader.What.Egg: Egg = ingridient; break;
 			case Upgrader.What.Kotlet: Kotlet = ingridient; break;
-			case Upgrader.What.RedOnion: RedOnion = ingridient; break;
+			case Upgrader.What.RedOnion: Speed = MaxSpeed; break;
 			case Upgrader.What.Cheese: Cheese = ingridient; break;
 		}
 	}
 
 	public override void TakeDamage(float damage)
 	{
-		if (Shield > 0)
-		{
+		if (Shield > 0) {
 			Shield -= damage;
 			return;
 		}

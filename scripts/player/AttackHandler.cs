@@ -35,6 +35,7 @@ public partial class AttackHandler : Node2D
 			
 			bullet.BulletResource = bulletResource;
 			bullet.Damage = DamageModifer;
+			bullet.Scale *= bulletResource.Scaler;
 
 			if (Additionals != null) 
 				foreach (var node in Additionals)

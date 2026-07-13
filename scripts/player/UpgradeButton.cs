@@ -21,9 +21,7 @@ public partial class UpgradeButton : Button
 			cost = upgrades[0].Count;
 			if (!(GlobalController.Instance.Money >= cost)) return;
 			GlobalController.Instance.Money -= cost;
-		}
-		else
-		{
+		}else {
 			if (upgrades == null || _level >= upgrades.Length) return;
 
 			cost = upgrades[_level].Count;
@@ -40,6 +38,14 @@ public partial class UpgradeButton : Button
 
 	void Setup(int level)
 	{
+		if (IsInfinite && upgrades is { Length: > 0 })
+		{
+			TooltipText = upgrades[0].Description;
+			Icon = upgrades[0].texture;
+           
+			Text = $"{upgrades[0].Name} (Lv.{level})\ncost: X{upgrades[0].Count}"; 
+			return;
+		}
 		if (upgrades == null || level >= upgrades.Length) {
 			Text = "MAX LEVEL";
 			Disabled = true;

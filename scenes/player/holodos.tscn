@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://l4ljwf3od5kn" path="res://assets/ingridients/sok.png" id="10_n2gxh"]
 [ext_resource type="Texture2D" uid="uid://c4qsdkibu5osc" path="res://assets/ingridients/Lettuce.png" id="11_n2gxh"]
 [ext_resource type="Texture2D" uid="uid://bgkarckto3wn0" path="res://assets/ingridients/lettuce_swing.png" id="12_3ti2o"]
+[ext_resource type="Texture2D" uid="uid://bvlhaeby5iqsb" path="res://assets/ingridients/heal.png" id="13_3ti2o"]
 
 [sub_resource type="Resource" id="Resource_grgi1"]
 script = ExtResource("4_1io5f")
@@ -87,6 +88,18 @@ texture = ExtResource("12_3ti2o")
 Name = "шустрый латук"
 Count = 100
 Description = "выаы"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_2kncu"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("13_3ti2o")
+Name = "Хил"
+Count = 5
+Description = "Вылечись за какие то крошки"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_ic3yj"]
+script = ExtResource("4_1io5f")
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [node name="Holodos" type="Control" unique_id=1192082827 node_paths=PackedStringArray("ExitButton")]
@@ -176,11 +189,21 @@ layout_mode = 2
 [node name="UpgradeButton10" parent="TextureRect/MarginContainer/GridContainer" unique_id=1475708613 instance=ExtResource("2_jysym")]
 layout_mode = 2
 
-[node name="UpgradeButton11" parent="TextureRect/MarginContainer/GridContainer" unique_id=835004148 instance=ExtResource("2_jysym")]
+[node name="Heal" parent="TextureRect/MarginContainer/GridContainer" unique_id=835004148 instance=ExtResource("2_jysym")]
 layout_mode = 2
+upgrades = Array[Object]([SubResource("Resource_2kncu")])
+IsInfinite = true
+
+[node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/Heal" unique_id=643045197 instance=ExtResource("7_1io5f")]
+_what = 8
 
 [node name="UpgradeButton12" parent="TextureRect/MarginContainer/GridContainer" unique_id=329275996 instance=ExtResource("2_jysym")]
 layout_mode = 2
+upgrades = Array[Object]([SubResource("Resource_ic3yj")])
+IsInfinite = true
+
+[node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/UpgradeButton12" unique_id=1057834478 instance=ExtResource("7_1io5f")]
+_what = 9
 
 [node name="Button" type="Button" parent="." unique_id=1618532208]
 layout_mode = 0

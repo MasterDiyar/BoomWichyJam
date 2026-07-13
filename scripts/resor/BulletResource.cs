@@ -12,5 +12,6 @@ public partial class BulletResource : Resource
     [Export] public float Randomness;
     [Export] public float BetweenAngle;
     [Export] public float StartAngle;
+    [Export] public float Scaler =1;
 
 }

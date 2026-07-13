@@ -12,7 +12,9 @@ public partial class Upgrader : Node
 		Kotlet,
 		Bacon,
 		Cheese,
-		RedOnion
+		RedOnion,
+		Heal,
+		RefrigeratorHeal
 	}
 
 	[Export] private What _what;
@@ -36,6 +38,9 @@ public partial class Upgrader : Node
 			case What.Cucumber: CucumberUpgrade(obj); break;
 			case What.Lettuce: LettuceUpgrade(obj); break;
 			
+			
+			case What.Heal: player.TakeDamage(-30); break;
+			case What.RefrigeratorHeal: GlobalController.Instance.holodos.TakeDamage(-60); break;
 		}
 	}
 
@@ -97,6 +102,7 @@ public partial class Upgrader : Node
 				break;
 		}
 	}
+	
 	
 	
 }

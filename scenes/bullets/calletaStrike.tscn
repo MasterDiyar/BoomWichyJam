@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://jtw112uc6pi3"]
+
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="1_4nhvl"]
+[ext_resource type="PackedScene" uid="uid://b6khlogx3lonb" path="res://scenes/bullets/calleta.tscn" id="2_najlk"]
+[ext_resource type="Texture2D" uid="uid://cpois1tt72aa4" path="res://assets/ingridients/Patty.png" id="3_5u8f7"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="3_najlk"]
+
+[sub_resource type="Resource" id="Resource_w4pk4"]
+script = ExtResource("3_najlk")
+Damage = 20.0
+Speed = 800.0
+Acceleration = 800.0
+LifeTime = 0.3
+BetweenAngle = 1.571
+StartAngle = 0.786
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[node name="AttackHandler" unique_id=166735263 instance=ExtResource("1_4nhvl")]
+bulletScene = ExtResource("2_najlk")
+bulletResource = SubResource("Resource_w4pk4")
+Count = 4
+
+[node name="Patty" type="Sprite2D" parent="." index="0" unique_id=1844992865]
+position = Vector2(0, 1)
+texture = ExtResource("3_5u8f7")

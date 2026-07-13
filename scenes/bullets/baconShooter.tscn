@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://8710iyihqv7q" path="res://scripts/player/MultiAttackHandler.cs" id="1_cbyxe"]
 [ext_resource type="PackedScene" uid="uid://dug7un53o4x2i" path="res://scenes/bullets/hambull.tscn" id="2_s5tka"]
 [ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="3_b1qt6"]
-[ext_resource type="Texture2D" uid="uid://c4qsdkibu5osc" path="res://assets/ingridients/Lettuce.png" id="4_uoi22"]
+[ext_resource type="Texture2D" uid="uid://dhh6phsx8q5oh" path="res://assets/ingridients/Bacon.png" id="4_cbyxe"]
 
 [sub_resource type="Resource" id="Resource_fshpy"]
 script = ExtResource("3_b1qt6")
@@ -28,5 +28,4 @@ Offset = 10.0
 wait_time = 0.2
 
 [node name="Lettuce" type="Sprite2D" parent="." unique_id=576154470]
-modulate = Color(1, 0, 0.5568628, 1)
-texture = ExtResource("4_uoi22")
+texture = ExtResource("4_cbyxe")

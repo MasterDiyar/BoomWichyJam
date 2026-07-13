@@ -12,11 +12,17 @@ public partial class AttackHandler : Node2D
 	[Export] public float AttackSpeed =1;
 	[Export] public float Offset = 0;
 	[Export] public PackedScene[] Additionals;
+	[Export] public bool TurnOn = true;
 	protected float TimeAfterAttack = 0;
 	protected bool CanAttack = true;
 	protected Entity parent;
 	public override void _Ready()
 	{
+		if (!TurnOn)
+		{
+			ProcessMode = ProcessModeEnum.Disabled;
+			return;
+		}
 		parent = this.GetFirstParentOfType<Entity>();
 		parent.AttackAction += AttackAction;
 	}

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cwu2clne8pisf"]
+
+[ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_yti5q"]
+[ext_resource type="Texture2D" uid="uid://538j4g0ixbha" path="res://assets/enemy/flag.png" id="2_s5xoe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hwpbs"]
+radius = 2.0
+
+[node name="bullet" unique_id=384085446 instance=ExtResource("1_yti5q")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=150551673]
+shape = SubResource("CircleShape2D_hwpbs")
+
+[node name="Flag" type="Sprite2D" parent="." index="1" unique_id=1509588707]
+position = Vector2(-29, -29)
+texture = ExtResource("2_s5xoe")

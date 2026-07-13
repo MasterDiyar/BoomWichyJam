@@ -4,39 +4,54 @@
 [ext_resource type="Texture2D" uid="uid://nk2obd0ah2fy" path="res://assets/ingridients/holodos.png" id="1_6pnc0"]
 [ext_resource type="PackedScene" uid="uid://8t1js801ykr0" path="res://scenes/player/upgrade_button.tscn" id="2_jysym"]
 [ext_resource type="Script" uid="uid://cx6poevkfjngu" path="res://scripts/resor/UpgradeResource.cs" id="4_1io5f"]
+[ext_resource type="Texture2D" uid="uid://byvan8xvbs1vx" path="res://assets/ingridients/tomato.png" id="5_mhktc"]
 [ext_resource type="Texture2D" uid="uid://3mcbgfq8eerj" path="res://assets/ingridients/pomidor.png" id="5_pf6sa"]
-[ext_resource type="Texture2D" uid="uid://clto3ohnmh20q" path="res://assets/ingridients/hp.png" id="6_flmjc"]
 [ext_resource type="PackedScene" uid="uid://d0p7jvte8yxo2" path="res://scenes/player/upgrader.tscn" id="7_1io5f"]
+[ext_resource type="Texture2D" uid="uid://lo7au6s4idl6" path="res://assets/ingridients/kost.png" id="7_usd5l"]
 [ext_resource type="Texture2D" uid="uid://du54fp10mbg52" path="res://assets/ingridients/ogurets.png" id="8_vt2r8"]
 [ext_resource type="Texture2D" uid="uid://u8pxa5qm5sch" path="res://assets/ingridients/Cucumber.png" id="9_q64ja"]
-[ext_resource type="Texture2D" uid="uid://l4ljwf3od5kn" path="res://assets/ingridients/sok.png" id="10_n2gxh"]
+[ext_resource type="Texture2D" uid="uid://bhpfn25p7uxis" path="res://assets/ingridients/Soleogurets.png" id="10_g0cb7"]
 [ext_resource type="Texture2D" uid="uid://c4qsdkibu5osc" path="res://assets/ingridients/Lettuce.png" id="11_n2gxh"]
 [ext_resource type="Texture2D" uid="uid://bgkarckto3wn0" path="res://assets/ingridients/lettuce_swing.png" id="12_3ti2o"]
 [ext_resource type="Texture2D" uid="uid://bvlhaeby5iqsb" path="res://assets/ingridients/heal.png" id="13_3ti2o"]
-[ext_resource type="Texture2D" uid="uid://dtqogvmlhp2fe" path="res://assets/ingridients/high_bulka.png" id="13_fwign"]
-[ext_resource type="Texture2D" uid="uid://cg7s3ma3868uj" path="res://assets/enemy/bacter/b3.png" id="15_u5p87"]
+[ext_resource type="Texture2D" uid="uid://hsg1e1jgsqjk" path="res://assets/ingridients/LettucePlus.png" id="13_g0cb7"]
+[ext_resource type="Texture2D" uid="uid://dgpwb5urrmuds" path="res://assets/ingridients/RedOnion.png" id="14_77mnd"]
+[ext_resource type="Texture2D" uid="uid://djjuufm2n5mgj" path="res://assets/ingridients/Egg.png" id="14_bahle"]
+[ext_resource type="Texture2D" uid="uid://c3tp2mywn1qyq" path="res://assets/ingridients/RedOnionHearts.png" id="15_frcan"]
+[ext_resource type="Texture2D" uid="uid://digiyckkhe0jm" path="res://assets/ingridients/BaconOne.png" id="15_ucywf"]
+[ext_resource type="Texture2D" uid="uid://dv28h2ci1ondf" path="res://assets/ingridients/EggDarker.png" id="15_uj4le"]
+[ext_resource type="Texture2D" uid="uid://dhh6phsx8q5oh" path="res://assets/ingridients/Bacon.png" id="16_7ii31"]
+[ext_resource type="Texture2D" uid="uid://c6ywnyxnl47pg" path="res://assets/ingridients/RedOnionHeartsPlus.png" id="16_cagwl"]
+[ext_resource type="Texture2D" uid="uid://poelk4ve2xvy" path="res://assets/ingridients/GoldenEgg.png" id="16_jo1qa"]
+[ext_resource type="Texture2D" uid="uid://cpois1tt72aa4" path="res://assets/ingridients/Patty.png" id="17_e11gr"]
+[ext_resource type="Texture2D" uid="uid://dyp6rp541mh0r" path="res://assets/ingridients/FiredPatty.png" id="18_g0cb7"]
+[ext_resource type="Texture2D" uid="uid://bb42xlwm78stf" path="res://assets/ingridients/WeryHotPatty.png" id="19_mhktc"]
+[ext_resource type="Texture2D" uid="uid://bw183gj4cm2" path="res://assets/ingridients/CHEESE.png" id="22_mvxfb"]
+[ext_resource type="Texture2D" uid="uid://ccu0es3nhbvxv" path="res://assets/ingridients/CHEESEPlus.png" id="23_co5ea"]
+[ext_resource type="Texture2D" uid="uid://d38igiaf362t3" path="res://assets/ingridients/DoubleCheese.png" id="24_ucywf"]
+[ext_resource type="Texture2D" uid="uid://d1slmokxl1ilm" path="res://assets/ingridients/remontholodos.png" id="29_co5ea"]
 
 [sub_resource type="Resource" id="Resource_grgi1"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("5_pf6sa")
-Name = "pomidor 1"
+texture = ExtResource("5_mhktc")
+Name = "томаты"
 Count = 1
 Description = "Стреляет двумя помидорами по 5 урона который взрывается"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_ckvpb"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("6_flmjc")
-Name = "pomidor 2"
+texture = ExtResource("5_pf6sa")
+Name = "больше помидоров"
 Count = 10
 Description = "Увеличевает количество косточек и уменьшает скорость атаки"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_450t8"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("5_pf6sa")
-Name = "томатики 3"
-Count = 50
+texture = ExtResource("7_usd5l")
+Name = "зерновой"
+Count = 45
 Description = "Уменьшает разброс и увеличивает количество косточек и их урон"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
@@ -58,7 +73,7 @@ metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_41o8v"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("10_n2gxh")
+texture = ExtResource("10_g0cb7")
 Name = "Кислотно"
 Count = 100
 Description = "Кислота"
@@ -86,15 +101,15 @@ metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_3ti2o"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("12_3ti2o")
+texture = ExtResource("13_g0cb7")
 Name = "шустрый латук"
-Count = 100
+Count = 70
 Description = "выаы"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_cbyxe"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("13_fwign")
+texture = ExtResource("15_ucywf")
 Name = "бекон"
 Count = 10
 Description = "ням ням"
@@ -102,23 +117,95 @@ metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_s5tka"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("11_n2gxh")
-Name = "больше"
+texture = ExtResource("16_7ii31")
+Name = "больше бекона"
 Count = 20
 Description = "не халял"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_b1qt6"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("13_fwign")
+texture = ExtResource("16_7ii31")
 Name = "не жирно?"
 Count = 50
 Description = "оч жирно"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
+[sub_resource type="Resource" id="Resource_k0o5a"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("14_bahle")
+Name = "Яйцо пашот"
+Count = 15
+Description = "яичный дробовик"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_rwk5w"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("15_uj4le")
+Name = "Желтковое"
+Count = 25
+Description = "больше патронов"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_u6456"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("16_jo1qa")
+Name = "Золотое яйцо"
+Count = 40
+Description = "Больше патронов и урона"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_ihjnt"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("17_e11gr")
+Name = "Котлета"
+Count = 10
+Description = "Вкусно и ."
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_1eahr"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("18_g0cb7")
+Name = "Подгорелая котлета"
+Count = 20
+Description = "Больше хп"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_usd5l"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("19_mhktc")
+Name = "Well done"
+Count = 25
+Description = "Чем поджареннее тем хрустящее"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_gixqm"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("22_mvxfb")
+Name = "Сыр"
+Count = 10
+Description = "Спавнит сыр который хилит"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_2jsmm"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("23_co5ea")
+Name = "Лечебная мазь"
+Count = 25
+Description = "Увеличивает хил"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
+[sub_resource type="Resource" id="Resource_qjd0m"]
+script = ExtResource("4_1io5f")
+texture = ExtResource("24_ucywf")
+Name = "Даблл чиз"
+Count = 40
+Description = "Больше сыра богу сыра"
+metadata/_custom_type_script = "uid://cx6poevkfjngu"
+
 [sub_resource type="Resource" id="Resource_mgjyu"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("13_3ti2o")
+texture = ExtResource("14_77mnd")
 Name = "onion"
 Count = 10
 Description = "Чем острее тем быстрее"
@@ -126,7 +213,7 @@ metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_fwign"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("13_fwign")
+texture = ExtResource("15_frcan")
 Name = "onion2"
 Count = 15
 Description = "ja skorost"
@@ -134,7 +221,7 @@ metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_u5p87"]
 script = ExtResource("4_1io5f")
-texture = ExtResource("15_u5p87")
+texture = ExtResource("16_cagwl")
 Name = "onion???"
 Count = 25
 Description = "men zhel"
@@ -150,9 +237,13 @@ metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
 [sub_resource type="Resource" id="Resource_ic3yj"]
 script = ExtResource("4_1io5f")
+texture = ExtResource("29_co5ea")
+Name = "Почини холодос"
+Count = 20
+Description = "да знаю дорого"
 metadata/_custom_type_script = "uid://cx6poevkfjngu"
 
-[node name="Holodos" type="Control" unique_id=1192082827 node_paths=PackedStringArray("ExitButton")]
+[node name="Holodos2" type="Control" unique_id=1192082827 node_paths=PackedStringArray("ExitButton")]
 texture_filter = 3
 layout_mode = 3
 anchors_preset = 15
@@ -225,17 +316,26 @@ upgrades = Array[Object]([SubResource("Resource_cbyxe"), SubResource("Resource_s
 [node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/bacon" unique_id=654041169 instance=ExtResource("7_1io5f")]
 _what = 5
 
-[node name="UpgradeButton5" parent="TextureRect/MarginContainer/GridContainer" unique_id=750487003 instance=ExtResource("2_jysym")]
+[node name="eggs" parent="TextureRect/MarginContainer/GridContainer" unique_id=750487003 instance=ExtResource("2_jysym")]
 layout_mode = 2
+upgrades = Array[Object]([SubResource("Resource_k0o5a"), SubResource("Resource_rwk5w"), SubResource("Resource_u6456")])
 
-[node name="UpgradeButton6" parent="TextureRect/MarginContainer/GridContainer" unique_id=235410032 instance=ExtResource("2_jysym")]
-layout_mode = 2
+[node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/eggs" unique_id=1437919271 instance=ExtResource("7_1io5f")]
+_what = 3
 
-[node name="UpgradeButton7" parent="TextureRect/MarginContainer/GridContainer" unique_id=509533805 instance=ExtResource("2_jysym")]
+[node name="patty" parent="TextureRect/MarginContainer/GridContainer" unique_id=235410032 instance=ExtResource("2_jysym")]
 layout_mode = 2
+upgrades = Array[Object]([SubResource("Resource_ihjnt"), SubResource("Resource_1eahr"), SubResource("Resource_usd5l")])
 
-[node name="UpgradeButton8" parent="TextureRect/MarginContainer/GridContainer" unique_id=801243753 instance=ExtResource("2_jysym")]
+[node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/patty" unique_id=1269821117 instance=ExtResource("7_1io5f")]
+_what = 4
+
+[node name="cheese" parent="TextureRect/MarginContainer/GridContainer" unique_id=509533805 instance=ExtResource("2_jysym")]
 layout_mode = 2
+upgrades = Array[Object]([SubResource("Resource_gixqm"), SubResource("Resource_2jsmm"), SubResource("Resource_qjd0m")])
+
+[node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/cheese" unique_id=1362676136 instance=ExtResource("7_1io5f")]
+_what = 6
 
 [node name="onion" parent="TextureRect/MarginContainer/GridContainer" unique_id=653391829 instance=ExtResource("2_jysym")]
 layout_mode = 2
@@ -243,9 +343,6 @@ upgrades = Array[Object]([SubResource("Resource_mgjyu"), SubResource("Resource_f
 
 [node name="Upgrader" parent="TextureRect/MarginContainer/GridContainer/onion" unique_id=1418653895 instance=ExtResource("7_1io5f")]
 _what = 7
-
-[node name="UpgradeButton10" parent="TextureRect/MarginContainer/GridContainer" unique_id=1475708613 instance=ExtResource("2_jysym")]
-layout_mode = 2
 
 [node name="Heal" parent="TextureRect/MarginContainer/GridContainer" unique_id=835004148 instance=ExtResource("2_jysym")]
 layout_mode = 2

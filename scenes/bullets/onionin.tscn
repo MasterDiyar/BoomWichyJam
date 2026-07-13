@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://m1h1c1ta2pgp"]
+
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="1_881bm"]
+[ext_resource type="Texture2D" uid="uid://dgpwb5urrmuds" path="res://assets/ingridients/RedOnion.png" id="2_d6p0m"]
+
+[node name="AttackHandler" unique_id=166735263 instance=ExtResource("1_881bm")]
+TurnOn = false
+
+[node name="RedOnion" type="Sprite2D" parent="." index="0" unique_id=58541479]
+texture = ExtResource("2_d6p0m")

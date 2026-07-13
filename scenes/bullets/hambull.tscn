@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dug7un53o4x2i"]
 
 [ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_qorbv"]
-[ext_resource type="Texture2D" uid="uid://c4qsdkibu5osc" path="res://assets/ingridients/Lettuce.png" id="2_mgjyu"]
+[ext_resource type="Texture2D" uid="uid://digiyckkhe0jm" path="res://assets/ingridients/BaconOne.png" id="2_qorbv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kescp"]
 radius = 3.0
@@ -17,10 +17,10 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_kescp")
 
 [node name="Lettuce" type="Sprite2D" parent="." index="1" unique_id=95378142]
-modulate = Color(1.8539116, 0.17332418, 1.3368078, 1)
 position = Vector2(2, -1)
+rotation = 0.5201081
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("2_mgjyu")
+texture = ExtResource("2_qorbv")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." index="2" unique_id=901647427]
 emission_shape = 1

@@ -37,10 +37,11 @@ public partial class Upgrader : Node
 			case What.Tomato: TomatoUpgrade(obj); break;
 			case What.Cucumber: CucumberUpgrade(obj); break;
 			case What.Lettuce: LettuceUpgrade(obj); break;
-			
+			case What.Egg:  EggUpgrade(obj); break;
 			case What.Bacon: BaconUpgrader(obj); break;
 			case What.RedOnion: OnionGrader(obj); break;
-			
+			case What.Kotlet:  KotletUpgrade(obj); break;
+			case What.Cheese : CheesyUpgrade(obj); break;
 			case What.Heal: player.TakeDamage(-30); break;
 			case What.RefrigeratorHeal: GlobalController.Instance.holodos.TakeDamage(-60); break;
 		}
@@ -130,6 +131,8 @@ public partial class Upgrader : Node
 		switch (level)
 		{
 			case 1:
+				var scene = GD.Load<PackedScene>("res://scenes/bullets/onionin.tscn");
+				player.AddIngridient(scene, What.RedOnion);
 				player.MaxSpeed += 20;
 				break;
 			case 2:
@@ -151,6 +154,50 @@ public partial class Upgrader : Node
 				break;
 			case 2:
 				player.Egg.Count += 2;
+				player.Egg.bulletResource.StartAngle += 0.15f;
+				player.Egg.bulletResource.BetweenAngle -= 0.1f;
+				break;
+			case 3:
+				player.Egg.Count += 2;
+				player.Egg.bulletResource.StartAngle += 0.2f;
+				player.Egg.bulletResource.BetweenAngle -= 0.08f;
+				player.Egg.DamageModifer = 1.2f;
+				break;
+		}
+	}
+
+	public void KotletUpgrade(int level)
+	{
+		switch (level)
+		{
+			case 1:
+				var scene = GD.Load<PackedScene>("res://scenes/bullets/calletaStrike.tscn");
+				player.AddIngridient(scene, What.Kotlet);
+				break;
+			case 2:
+				player.Kotlet.bulletResource.Speed += 90;
+				break;
+			case 3:
+				player.Kotlet.Count = 6;
+				player.Kotlet.bulletResource.BetweenAngle = Mathf.Tau / 6;
+				player.Kotlet.bulletResource.Speed += 90;
+				break;
+		}
+	}
+
+	public void CheesyUpgrade(int level)
+	{
+		switch (level)
+		{
+			case 1:
+				var scene = GD.Load<PackedScene>("res://scenes/bullets/cheese_shooter.tscn");
+				player.AddIngridient(scene, What.Cheese);
+				break;
+			case 2:
+				player.Cheese.DamageModifer = 1.25f;
+				break;
+			case 3:
+				player.Cheese.Count = 3;
 				break;
 		}
 	}

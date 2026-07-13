@@ -14,6 +14,7 @@ public partial class Ui : CanvasLayer
 		parent.MoneyChanged += MoneyChanged;
 		parent.HpChanged += HpChanged;
 		parent.OpenHolodilnik += OpenFridge;
+		HpProgressBar.MaxValue = parent.MaxHp;
 	}
 
 	private void HpChanged()

@@ -21,6 +21,11 @@ public partial class GlobalController : Node
 	public int MaxBacteriaCount = 40;
 	
 	public Action<int> WaveStarted;
+	
+	public int TrumpCount = 0;
+	
+	
+	
 	public override void _Ready()
 	{
 		Instance = this;

@@ -20,7 +20,6 @@
 script = ExtResource("2_an2w6")
 MaxHp = 100.0
 MaxSpeed = 100.0
-MaxShield = 50.0
 metadata/_custom_type_script = "uid://282cvyih62kp"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmle"]
@@ -163,12 +162,12 @@ outline_color = Color(0, 0, 0, 1)
 texture_filter = 3
 script = ExtResource("1_wid6y")
 playerResource = SubResource("Resource_521od")
-Faction = 1
 animationPlayer = NodePath("AnimationPlayer")
 whereAdd = NodePath("Textiure/Body")
 Head = NodePath("Textiure/HighBulka")
 body = NodePath("Textiure")
 CollectArea = NodePath("Podbor")
+Faction = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917468936]
 position = Vector2(1.5, 2.5)
@@ -216,8 +215,8 @@ libraries/ = SubResource("AnimationLibrary_nnjgc")
 [node name="Test" parent="." unique_id=921503120 node_paths=PackedStringArray("Parent") instance=ExtResource("10_nnjgc")]
 layer = 3
 visible = false
-scene = ExtResource("11_ecywh")
 Parent = NodePath("..")
+scene = ExtResource("11_ecywh")
 
 [node name="Podbor" type="Area2D" parent="." unique_id=394743809]
 

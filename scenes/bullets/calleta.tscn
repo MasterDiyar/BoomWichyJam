@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b6khlogx3lonb"]
+
+[ext_resource type="PackedScene" uid="uid://cj23lyq5unrkq" path="res://scenes/player/bullet.tscn" id="1_opqo3"]
+[ext_resource type="Texture2D" uid="uid://dyp6rp541mh0r" path="res://assets/ingridients/FiredPatty.png" id="2_tybw7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdmle"]
+radius = 4.1231055
+
+[node name="bullet" unique_id=384085446 instance=ExtResource("1_opqo3")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=150551673]
+shape = SubResource("CircleShape2D_sdmle")
+
+[node name="FiredPatty" type="Sprite2D" parent="." index="1" unique_id=830349795]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_tybw7")

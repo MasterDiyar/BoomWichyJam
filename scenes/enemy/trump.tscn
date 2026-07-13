@@ -1,0 +1,274 @@
+[gd_scene format=3 uid="uid://iq8qsg0qlsrg"]
+
+[ext_resource type="PackedScene" uid="uid://04s8bvwaxff2" path="res://scenes/enemy/enemy.tscn" id="1_gw283"]
+[ext_resource type="Texture2D" uid="uid://ddlok02f5xvcs" path="res://assets/enemy/trump.png" id="2_cvoak"]
+[ext_resource type="Script" uid="uid://282cvyih62kp" path="res://scripts/resor/UnitResource.cs" id="2_dxy7y"]
+[ext_resource type="PackedScene" uid="uid://cbvkur2781wh" path="res://scenes/enemy/money.tscn" id="3_840jc"]
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="6_5q4wy"]
+[ext_resource type="PackedScene" uid="uid://cwu2clne8pisf" path="res://scenes/bullets/flagioth.tscn" id="7_nd160"]
+[ext_resource type="Script" uid="uid://by100sg868tur" path="res://scripts/enemy/AiBoss.cs" id="8_nd160"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="8_ry71l"]
+
+[sub_resource type="Resource" id="Resource_50yxr"]
+script = ExtResource("2_dxy7y")
+MaxHp = 800.0
+MaxSpeed = 30.0
+MaxShield = 100.0
+metadata/_custom_type_script = "uid://282cvyih62kp"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vpncu"]
+radius = 15.0
+height = 62.0
+
+[sub_resource type="Animation" id="Animation_50yxr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Trump5:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Trump6:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Trump6:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 24)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Trump5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-6, 26)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Trump:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Trump:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -22.000002)]
+}
+
+[sub_resource type="Animation" id="Animation_dxy7y"]
+resource_name = "walk"
+length = 1.3333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Trump5:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.28274333, 0.50265485]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Trump6:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.28274333, -0.50265485]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Trump6:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5, 24), Vector2(-6.0000005, 24.000002), Vector2(3.0000005, 24)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Trump5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-6, 26), Vector2(2, 24), Vector2(-7, 24)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Trump:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.37, 0.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.17453292, -0.13962634]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Trump:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.37, 0.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -24), Vector2(4, -23), Vector2(-3.0000007, -23)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_840jc"]
+_data = {
+&"RESET": SubResource("Animation_50yxr"),
+&"walk": SubResource("Animation_dxy7y")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_grgi1"]
+radius = 91.787796
+
+[sub_resource type="Resource" id="Resource_5q4wy"]
+script = ExtResource("8_ry71l")
+Damage = 33.0
+Speed = 150.0
+Acceleration = 500.0
+LifeTime = 1.0
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[node name="Enemy" unique_id=177023164 instance=ExtResource("1_gw283")]
+Resource = SubResource("Resource_50yxr")
+Money = ExtResource("3_840jc")
+MoneyCount = 10
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=2034902037]
+visible = false
+position = Vector2(0, 18)
+shape = SubResource("CapsuleShape2D_vpncu")
+
+[node name="Body" type="Node2D" parent="." index="1" unique_id=1552140108]
+
+[node name="Trump" type="Sprite2D" parent="Body" index="0" unique_id=625819401]
+position = Vector2(4, -22.000002)
+texture = ExtResource("2_cvoak")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Trump2" type="Sprite2D" parent="Body" index="1" unique_id=1100329623]
+position = Vector2(-1, 9)
+texture = ExtResource("2_cvoak")
+region_enabled = true
+region_rect = Rect2(37, 0, 44, 40)
+
+[node name="Trump3" type="Sprite2D" parent="Body" index="2" unique_id=2100605670]
+position = Vector2(15, 21)
+texture = ExtResource("2_cvoak")
+region_enabled = true
+region_rect = Rect2(80, 0, 16, 16)
+
+[node name="Trump4" type="Sprite2D" parent="Body" index="3" unique_id=1094558892]
+position = Vector2(-19, 22)
+texture = ExtResource("2_cvoak")
+region_enabled = true
+region_rect = Rect2(80, 0, 16, 16)
+
+[node name="Trump5" type="Sprite2D" parent="Body" index="4" unique_id=1052437394]
+position = Vector2(-6, 26)
+texture = ExtResource("2_cvoak")
+offset = Vector2(0, 12)
+region_enabled = true
+region_rect = Rect2(0, 38, 14, 24)
+
+[node name="Trump8" type="Sprite2D" parent="Body/Trump5" index="0" unique_id=1039909183]
+position = Vector2(0, 24)
+texture = ExtResource("2_cvoak")
+region_enabled = true
+region_rect = Rect2(1.8255775, 70.151726, 14.824435, 9.661934)
+
+[node name="Trump6" type="Sprite2D" parent="Body" index="5" unique_id=980525729]
+position = Vector2(5, 24)
+texture = ExtResource("2_cvoak")
+offset = Vector2(0, 12)
+region_enabled = true
+region_rect = Rect2(0, 38, 14, 24)
+
+[node name="Trump7" type="Sprite2D" parent="Body/Trump6" index="0" unique_id=174371056]
+position = Vector2(1, 25)
+texture = ExtResource("2_cvoak")
+region_enabled = true
+region_rect = Rect2(1.8255775, 70.151726, 14.824435, 9.661934)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body" index="6" unique_id=1433180914]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_840jc")
+
+[node name="Area2D" type="Area2D" parent="." index="2" unique_id=1048172426]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=2032016101]
+shape = SubResource("CircleShape2D_grgi1")
+
+[node name="AttackHandler" parent="." index="3" unique_id=166735263 instance=ExtResource("6_5q4wy")]
+bulletScene = ExtResource("7_nd160")
+bulletResource = SubResource("Resource_5q4wy")
+AttackSpeed = 4.0
+
+[node name="Node2D" type="Node2D" parent="." index="4" unique_id=1123393439 node_paths=PackedStringArray("mob", "vision", "Body", "animPlayer")]
+script = ExtResource("8_nd160")
+mob = NodePath("..")
+vision = NodePath("../Area2D")
+Body = NodePath("../Body")
+animPlayer = NodePath("../Body/AnimationPlayer")

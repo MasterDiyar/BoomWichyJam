@@ -15,7 +15,8 @@ public partial class Spawner : Node2D
 	{
 		var obj = num - 1;
 		if (obj > Waves.Length ) obj = Waves.Length - 1;
-
+		
+		if (Waves[obj].Units == null) return;
 		foreach (var res in Waves[obj].Units)
 		{
 			for (int i = 0; i < res.Count; i++)

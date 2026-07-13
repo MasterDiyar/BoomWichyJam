@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3qcrt7bpr2eg" path="res://assets/enemy/plesenwait.png" id="2_ijama"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjwof"]
-radius = 75.16
+radius = 122.33152
 
 [node name="Vzriv" unique_id=384085446 instance=ExtResource("1_3prtn")]
 
@@ -12,4 +12,5 @@ radius = 75.16
 shape = SubResource("CircleShape2D_sjwof")
 
 [node name="Plesenwait" type="Sprite2D" parent="." index="1" unique_id=1392809456]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_ijama")

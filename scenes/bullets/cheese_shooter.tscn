@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dpr0i04ra1jh8"]
+
+[ext_resource type="PackedScene" uid="uid://cehdpy1ur4x4o" path="res://scenes/bullets/attack_handler.tscn" id="1_nhvwc"]
+[ext_resource type="PackedScene" uid="uid://cdp3yya52jocy" path="res://scenes/bullets/heal_chees.tscn" id="2_1yvuf"]
+[ext_resource type="Texture2D" uid="uid://bw183gj4cm2" path="res://assets/ingridients/CHEESE.png" id="2_e0eqc"]
+[ext_resource type="Script" uid="uid://crcr77siy7s7o" path="res://scripts/resor/BulletResource.cs" id="3_mpg6p"]
+
+[sub_resource type="Resource" id="Resource_1yvuf"]
+script = ExtResource("3_mpg6p")
+Damage = -30.0
+LifeTime = 5.0
+Randomness = 6.28
+metadata/_custom_type_script = "uid://crcr77siy7s7o"
+
+[node name="AttackHandler" unique_id=166735263 instance=ExtResource("1_nhvwc")]
+bulletScene = ExtResource("2_1yvuf")
+bulletResource = SubResource("Resource_1yvuf")
+Offset = 90.0
+
+[node name="Cheese" type="Sprite2D" parent="." index="0" unique_id=1401252994]
+texture_filter = 3
+texture = ExtResource("2_e0eqc")

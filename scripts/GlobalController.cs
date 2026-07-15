@@ -5,7 +5,7 @@ public partial class GlobalController : Node
 {
 	public Fridge holodos;
 	public float MoneyAmplifier = 1;
-	public float Money=1000;
+	public float Money=0;
 	
 	public static GlobalController Instance;
 	
